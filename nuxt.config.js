@@ -5,9 +5,16 @@ export default {
   head: {
     titleTemplate: '%s - bookshop',
     title: 'bookshop',
+    
     htmlAttrs: {
       lang: 'en'
     },
+    script: [
+        {
+            type: 'module',
+            src: 'https://sandbox.web.squarecdn.com/v1/square.js'
+        }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
