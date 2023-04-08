@@ -21,7 +21,7 @@
         large
         x-large
         nuxt
-        to="/takeaparts"
+        to="/buyparts"
       >
         เบิกอะไหล่
       </v-btn>

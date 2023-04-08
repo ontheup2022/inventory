@@ -12,7 +12,7 @@
     <v-btn elevation="2"> เพิ่มข้อมูลอะไหล่</v-btn>
     <v-data-table
       :headers="headers"
-      :items="theemployee"
+      :items="thebuyautoparts"
       :items-per-page="5"
       class="elevation-2"
       density="compact"
@@ -33,12 +33,12 @@ export default {
           sortable: false,
           value: "name",
         },
-        { text: "หมายเลขอะไหล่", value: "partscode" },
-        { text: "รายการ", value: "listed" },
-        { text: "จำนวน", value: "number" },
-        { text: "เลือก", value: "choose" },
+        { text: "วันที่สั่ง", value: "datetoorder" },
+        { text: "บริษัท", value: "company" },
+        { text: "ยอดรวม", value: "priceallaparts" },
+        { text: "เลือก", value: "chooseaparts" },
       ],
-      theemployee: [],
+      thebuyautoparts: [],
     };
   },
 };

@@ -89,7 +89,7 @@ export default {
         {
           icon: "mdi-apps",
           title: "เมนู",
-          to: "/",
+          to: "/home",
         },
         {
           icon: "mdi-chart-bubble",
@@ -99,37 +99,37 @@ export default {
         {
           icon: "mdi-chart-bubble",
           title: "ข้อมูลพนักงาน",
-          to: "/employee",
+          to: "/dataemployee",
         },
         {
           icon: "mdi-chart-bubble",
           title: "เบิกอะไหล่",
-          to: "/test",
+          to: "/buyparts",
         },
         {
           icon: "mdi-chart-bubble",
           title: "ลดรายชื่อ",
-          to: "/test",
+          to: "/deletecontacts",
         },
         {
           icon: "mdi-chart-bubble",
           title: "สั่งซื้ออะไหล่",
-          to: "/outbook",
+          to: "/buyautoparts",
         },
         {
           icon: "mdi-chart-bubble",
           title: "สรุปรายงาน",
-          to: "/outbook",
+          to: "/report",
         },
         {
           icon: "mdi-chart-bubble",
           title: "การแจ้งเตือน",
-          to: "/outbook",
+          to: "/notifications",
         },
         {
           icon: "mdi-chart-bubble",
           title: "ออกจากระบบ",
-          to: "/outbook",
+          to: "/home",
         },
       ],
       miniVariant: false,

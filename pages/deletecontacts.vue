@@ -9,7 +9,7 @@
     >
     </v-text-field>
     <v-btn elevation="2"> ค้นหา</v-btn>
-    <v-btn elevation="2"> เพิ่มข้อมูลอะไหล่</v-btn>
+    <v-btn elevation="2"> เพิ่มพนักงาน</v-btn>
     <v-data-table
       :headers="headers"
       :items="theemployee"
@@ -28,15 +28,16 @@ export default {
     return {
       headers: [
         {
-          text: "No.",
-          align: "numbers",
+          text: "Dessert (100g serving)",
+          align: "start",
           sortable: false,
           value: "name",
         },
-        { text: "หมายเลขอะไหล่", value: "partscode" },
-        { text: "รายการ", value: "listed" },
-        { text: "จำนวน", value: "number" },
-        { text: "เลือก", value: "choose" },
+        { text: "Calories", value: "calories" },
+        { text: "Fat (g)", value: "fat" },
+        { text: "Carbs (g)", value: "carbs" },
+        { text: "Protein (g)", value: "protein" },
+        { text: "Iron (%)", value: "iron" },
       ],
       theemployee: [],
     };

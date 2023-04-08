@@ -1,7 +1,83 @@
 <template>
-  <v-row justify="left" align="baseline">
-    <v-btn color="secondary" depressed elevation="36" large x-large></v-btn>
-    <v-col lg="4" md="6" sm="12"> </v-col>
+  <v-row justify="center" align="baseline">
+    <v-col cols="36" md="24" sm="12" xl="36">
+      <v-btn
+        color="primary"
+        depressed
+        elevation="36"
+        large
+        x-large
+        nuxt
+        to="/autoparts"
+      >
+        ข้อมูลอะไหล่ยนต์
+      </v-btn>
+    </v-col>
+    <v-col cols="36" md="36" sm="12">
+      <v-btn
+        color="primary"
+        depressed
+        elevation="36"
+        large
+        x-large
+        nuxt
+        to="/takeaparts"
+      >
+        เบิกอะไหล่
+      </v-btn>
+    </v-col>
+    <v-col cols="36" md="36" sm="12">
+      <v-btn
+        color="primary"
+        depressed
+        elevation="36"
+        large
+        x-large
+        nuxt
+        to="/report"
+      >
+        สรุปรายงาน
+      </v-btn>
+    </v-col>
+    <v-col cols="36" md="36" sm="12">
+      <v-btn
+        color="primary"
+        depressed
+        elevation="36"
+        large
+        x-large
+        nuxt
+        to="/report"
+      >
+        ข้อมูลพนักงาน
+      </v-btn>
+    </v-col>
+    <v-col cols="36" md="36" sm="12">
+      <v-btn
+        color="primary"
+        depressed
+        elevation="36"
+        large
+        x-large
+        nuxt
+        to="/report"
+      >
+        สั่งซื้ออะไหล่
+      </v-btn>
+    </v-col>
+    <v-col cols="36" md="36" sm="12">
+      <v-btn
+        color="primary"
+        depressed
+        elevation="36"
+        large
+        x-large
+        nuxt
+        to="/report"
+      >
+        การแจ้งเตือน
+      </v-btn>
+    </v-col>
   </v-row>
 </template>
 
