@@ -38,7 +38,7 @@
       <v-toolbar-title>Inventory Autoparts</v-toolbar-title>
       <v-spacer />
       <div class="text-center">
-        <v-btn
+        <!-- <v-btn
           class="ma-2"
           :loading="loading2"
           :disabled="loading2"
@@ -50,7 +50,7 @@
           <template v-slot:loader>
             <span>Loading...</span>
           </template>
-        </v-btn>
+        </v-btn> -->
       </div>
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
@@ -106,11 +106,11 @@ export default {
           title: "เบิกอะไหล่",
           to: "/buyparts",
         },
-        {
-          icon: "mdi-chart-bubble",
-          title: "ลดรายชื่อ",
-          to: "/deletecontacts",
-        },
+        // {
+        //   icon: "mdi-chart-bubble",
+        //   title: "ลดรายชื่อ",
+        //   to: "/deletecontacts",
+        // },
         {
           icon: "mdi-chart-bubble",
           title: "สั่งซื้ออะไหล่",
@@ -119,7 +119,8 @@ export default {
         {
           icon: "mdi-chart-bubble",
           title: "สรุปรายงาน",
-          to: "/report",
+          to: "/reportday",
+          to: "/reportmonth",
         },
         {
           icon: "mdi-chart-bubble",
@@ -135,7 +136,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "ระบบยืม-คืนหนังสือ",
+      title: "Inventory Autopart",
     };
   },
 };
