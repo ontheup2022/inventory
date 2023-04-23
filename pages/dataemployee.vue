@@ -1,22 +1,32 @@
 <template>
   <v-col cols="12" sm="10" md="4">
     <v-text-field
-      label="Filled"
+      label="Search"
       placeholder="Dense & Rounded"
       filled
       rounded
       dense
     >
     </v-text-field>
+
     <v-btn elevation="2"> ค้นหา</v-btn>
-    <v-btn elevation="2"> เพิ่มพนักงาน</v-btn>
+    <v-btn
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="success"
+      @click="loader = 'loading2'"
+      to="/member"
+    >
+      เพิ่มพนักงาน
+      <!-- <template v-slot:loader>
+      </template> -->
+    </v-btn>
     <v-data-table
       :headers="headers"
       :items="theemployee"
-      :items-per-page="5"
-      class="elevation-2"
-      density="compact"
-      item-key="name"
+      :items-per-page="4"
+      class="elevation-1"
     >
     </v-data-table>
   </v-col>

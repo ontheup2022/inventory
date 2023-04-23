@@ -1,15 +1,17 @@
 <template>
   <v-col cols="12" sm="10" md="4">
-    <v-text-field
-      label="Filled"
-      placeholder="Dense & Rounded"
-      filled
-      rounded
-      dense
-    >
+    <v-text-field label="Search" placeholder="" filled rounded dense>
     </v-text-field>
-    <v-btn elevation="2"> ค้นหา</v-btn>
-    <v-btn elevation="2"> เพิ่มข้อมูลอะไหล่</v-btn>
+    <v-btn elevation="2">ค้นหา</v-btn>
+    <v-btn
+      elevation="6"
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="success"
+      @click="loader = 'loading2'"
+      >เพิ่มข้อมูลอะไหล่</v-btn
+    >
     <v-data-table
       :headers="headers"
       :items="thebuyautoparts"

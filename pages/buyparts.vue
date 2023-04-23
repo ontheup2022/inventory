@@ -5,11 +5,32 @@
         <v-text-field label="วันที่" v-model="picker">
           <v-date-picker v-model="picker"> </v-date-picker>
         </v-text-field>
+        <v-text-field label="ยอดรวมทั้งหมด" v-model="picker">
+          <v-date-picker v-model="picker"> </v-date-picker>
+        </v-text-field>
       </v-row>
     </v-col>
-    <v-btn elevation="2"> Save</v-btn>
-    <v-btn elevation="2"> Cancel</v-btn>
-
+    <v-btn
+      elevation="2"
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="success"
+      @click="loader = 'loading2'"
+    >
+      Save</v-btn
+    >
+    <v-btn elevation="2" depressed color="error"> Cancel</v-btn>
+    <!-- <v-btn
+      elevation="2"
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="success"
+      @click="loader = 'loading2'"
+    >
+      เพิ่ม</v-btn
+    > -->
     <v-data-table
       :headers="headers"
       :items="thebuyparts"
@@ -37,7 +58,7 @@ export default {
         { text: "รายการ", value: "listed" },
         { text: "จำนวน", value: "number" },
         { text: "ราคา/หน่วย", value: "priceaparts" },
-        { text: "ราคาทั้งหมด", value: "priceapartsall" },
+        { text: "ราคาทั้งหมด", value: "priceapartsell" },
       ],
       thebuyparts: [],
     };

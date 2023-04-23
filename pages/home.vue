@@ -34,7 +34,7 @@
         large
         x-large
         nuxt
-        to="/report"
+        to="/reportday"
       >
         สรุปรายงาน
       </v-btn>

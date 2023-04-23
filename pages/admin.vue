@@ -34,7 +34,7 @@
         large
         x-large
         nuxt
-        to="/report"
+        to="/reportday"
       >
         สรุปรายงาน
       </v-btn>
@@ -47,7 +47,7 @@
         large
         x-large
         nuxt
-        to="/report"
+        to="/dataemployee"
       >
         ข้อมูลพนักงาน
       </v-btn>
