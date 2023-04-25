@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="baseline">
-    <v-col cols="36" md="24" sm="12" xl="36">
+    <v-col>
       <v-btn
         color="primary"
         depressed

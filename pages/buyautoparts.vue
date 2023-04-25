@@ -10,6 +10,7 @@
       :disabled="loading2"
       color="success"
       @click="loader = 'loading2'"
+      to="/addautoparts"
       >เพิ่มข้อมูลอะไหล่</v-btn
     >
     <v-data-table

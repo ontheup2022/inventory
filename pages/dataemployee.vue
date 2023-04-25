@@ -16,7 +16,7 @@
       :disabled="loading2"
       color="success"
       @click="loader = 'loading2'"
-      to="/member"
+      to="/addmember"
     >
       เพิ่มพนักงาน
       <!-- <template v-slot:loader>

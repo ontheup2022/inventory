@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="baseline">
-    <v-col cols="36" md="24" sm="12" xl="36">
+    <v-col>
       <v-btn
         color="primary"
         depressed
@@ -13,7 +13,7 @@
         ข้อมูลอะไหล่ยนต์
       </v-btn>
     </v-col>
-    <v-col cols="36" md="36" sm="12">
+    <v-col>
       <v-btn
         color="primary"
         depressed
@@ -26,7 +26,7 @@
         เบิกอะไหล่
       </v-btn>
     </v-col>
-    <v-col cols="36" md="36" sm="12">
+    <v-col>
       <v-btn
         color="primary"
         depressed
@@ -39,7 +39,7 @@
         สรุปรายงาน
       </v-btn>
     </v-col>
-    <v-col cols="36" md="36" sm="12">
+    <v-col>
       <v-btn
         color="primary"
         depressed
@@ -73,7 +73,7 @@
         large
         x-large
         nuxt
-        to="/notification"
+        to="/notifications"
       >
         การแจ้งเตือน
       </v-btn>
