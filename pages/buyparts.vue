@@ -1,27 +1,53 @@
 <template>
   <div class="text-center d-flex align-center justify-space-around">
-    <v-col cols="12" sm="6" md="3">
+    <v-col>
       <v-row justify="center" placeholder="">
-        <v-text-field label="วันที่" v-model="picker">
+        <!-- <v-text-field label="วันที่" v-model="picker">
           <v-date-picker v-model="picker"> </v-date-picker>
         </v-text-field>
         <v-text-field label="ยอดรวมทั้งหมด" v-model="picker">
           <v-date-picker v-model="picker"> </v-date-picker>
+        </v-text-field> -->
+        <v-text-field
+          label="วันที่"
+          placeholder="Dense & Rounded"
+          filled
+          rounded
+          dense
+        >
+        </v-text-field>
+        <v-text-field
+          label="ยอดรวมทั้งหมด"
+          placeholder="Dense & Rounded"
+          filled
+          rounded
+          dense
+        >
         </v-text-field>
       </v-row>
-    </v-col>
-    <v-btn
-      elevation="2"
-      class="ma-2"
-      :loading="loading2"
-      :disabled="loading2"
-      color="success"
-      @click="loader = 'loading2'"
-    >
-      Save</v-btn
-    >
-    <v-btn elevation="2" depressed color="error"> Cancel</v-btn>
-    <!-- <v-btn
+
+      <!-- <v-btn
+        elevation="2"
+        class="ma-2"
+        :loading="loading2"
+        :disabled="loading2"
+        color="success"
+        @click="loader = 'loading2'"
+      >
+        Save</v-btn
+      >
+      <v-btn elevation="2" depressed color="error"> Cancel</v-btn> -->
+      <v-btn
+        elevation="2"
+        class="ma-2"
+        :loading="loading2"
+        :disabled="loading2"
+        color="success"
+      >
+        เพิ่ม</v-btn
+      >
+
+      <!-- <v-btn
       elevation="2"
       class="ma-2"
       :loading="loading2"
@@ -31,15 +57,16 @@
     >
       เพิ่ม</v-btn
     > -->
-    <v-data-table
-      :headers="headers"
-      :items="thebuyparts"
-      :items-per-page="5"
-      class="elevation-2"
-      density="compact"
-      item-key="name"
-    >
-    </v-data-table>
+      <v-data-table
+        :headers="headers"
+        :items="thebuyparts"
+        :items-per-page="5"
+        class="elevation-2"
+        density="compact"
+        item-key="name"
+      >
+      </v-data-table>
+    </v-col>
   </div>
 </template>
 

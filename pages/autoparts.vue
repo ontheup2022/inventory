@@ -1,6 +1,12 @@
 <template>
   <v-col>
-    <v-text-field label="Search" filled dense></v-text-field>
+    <v-text-field
+      label="Search"
+      placeholder="Dense & Rounded"
+      filled
+      rounded
+      dense
+    ></v-text-field>
 
     <v-btn elevation="2"> ค้นหา</v-btn>
     <v-btn

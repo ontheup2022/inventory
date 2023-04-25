@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" sm="10" md="4">
+  <v-col>
     <v-text-field
       label="Search"
       placeholder="Dense & Rounded"

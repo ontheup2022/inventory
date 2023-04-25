@@ -130,7 +130,7 @@ export default {
         {
           icon: "mdi-chart-bubble",
           title: "ออกจากระบบ",
-          to: "/home",
+          to: "/admin",
         },
       ],
       miniVariant: false,

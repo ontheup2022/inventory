@@ -60,7 +60,7 @@
         large
         x-large
         nuxt
-        to="/report"
+        to="/buyautoparts"
       >
         สั่งซื้ออะไหล่
       </v-btn>
@@ -73,7 +73,7 @@
         large
         x-large
         nuxt
-        to="/report"
+        to="/notification"
       >
         การแจ้งเตือน
       </v-btn>
