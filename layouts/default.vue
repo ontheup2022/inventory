@@ -82,7 +82,7 @@ export default {
         {
           icon: "mdi-apps",
           title: "เมนู",
-          to: "/home",
+          to: "/admin",
         },
         {
           icon: "mdi-chart-bubble",
