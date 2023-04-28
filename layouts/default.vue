@@ -80,22 +80,22 @@ export default {
       fixed: false,
       items: [
         {
-          icon: "mdi-apps",
+          icon: "mdi-menu",
           title: "เมนู",
           to: "/admin",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-clipboard-file-outline",
           title: "ข้อมูลอะไหล่ยนต์",
           to: "/autoparts",
         },
         {
-          icon: " mdi-apps",
+          icon: "mdi-card-account-details-outline",
           title: "ข้อมูลพนักงาน",
           to: "/dataemployee",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-arrow-up-circle-outline",
           title: "เบิกอะไหล่",
           to: "/buyparts",
         },
@@ -105,23 +105,23 @@ export default {
         //   to: "/deletecontacts",
         // },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-wallet-bifold-outline",
           title: "สั่งซื้ออะไหล่",
           to: "/buyautoparts",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-content-paste",
           title: "สรุปรายงาน",
           to: "/reportday",
           to: "/reportmonth",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-bell-alert",
           title: "การแจ้งเตือน",
           to: "/notifications",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-logout",
           title: "ออกจากระบบ",
           to: "/admin",
         },
