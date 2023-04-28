@@ -9,17 +9,7 @@
     ></v-text-field>
 
     <v-btn elevation="2"> ค้นหา</v-btn>
-    <v-btn
-      elevation="2"
-      class="ma-2"
-      :loading="loading2"
-      :disabled="loading2"
-      color="success"
-      @click="loader = 'loading2'"
-      to="/addautoparts"
-    >
-      เพิ่มข้อมูลอะไหล่</v-btn
-    >
+    
     <v-data-table
       :headers="headers"
       :items="theemployee"

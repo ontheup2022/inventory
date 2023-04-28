@@ -9,15 +9,7 @@
           <v-date-picker v-model="picker"> </v-date-picker>
         </v-text-field> -->
         <v-text-field
-          label="วันที่"
-          placeholder="Dense & Rounded"
-          filled
-          rounded
-          dense
-        >
-        </v-text-field>
-        <v-text-field
-          label="ยอดรวมทั้งหมด"
+          label="Search"
           placeholder="Dense & Rounded"
           filled
           rounded
@@ -44,7 +36,7 @@
         :disabled="loading2"
         color="success"
       >
-        เพิ่ม</v-btn
+        ค้นหา</v-btn
       >
 
       <!-- <v-btn
@@ -86,6 +78,7 @@ export default {
         { text: "จำนวน", value: "number" },
         { text: "ราคา/หน่วย", value: "priceaparts" },
         { text: "ราคาทั้งหมด", value: "priceapartsell" },
+        { text: "เลือกเบิก", value: "pickup" },
       ],
       thebuyparts: [],
     };

@@ -11,7 +11,7 @@
       color="success"
       @click="loader = 'loading2'"
       to="/addautoparts"
-      >เพิ่มข้อมูลอะไหล่</v-btn
+      >เพิ่มข้อมูลการสั่งซื้อ</v-btn
     >
     <v-data-table
       :headers="headers"
