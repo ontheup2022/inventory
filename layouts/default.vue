@@ -90,7 +90,7 @@ export default {
           to: "/autoparts",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: " mdi-apps",
           title: "ข้อมูลพนักงาน",
           to: "/dataemployee",
         },
