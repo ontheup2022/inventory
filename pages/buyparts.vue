@@ -10,7 +10,8 @@
         </v-text-field> -->
         <v-text-field
           label="Search"
-          placeholder="Dense & Rounded"
+          placeholder=""
+          class="mdi mdi-magnify"
           filled
           rounded
           dense

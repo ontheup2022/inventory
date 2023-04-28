@@ -2,7 +2,8 @@
   <v-col>
     <v-text-field
       label="Search"
-      placeholder="Dense & Rounded"
+      placeholder=""
+      class="mdi mdi-magnify"
       filled
       rounded
       dense
@@ -16,7 +17,7 @@
       :disabled="loading2"
       color="success"
       @click="loader = 'loading2'"
-      to="/addmember"
+      to="/addemployee"
     >
       เพิ่มพนักงาน
       <!-- <template v-slot:loader>

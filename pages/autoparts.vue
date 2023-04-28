@@ -2,14 +2,15 @@
   <v-col>
     <v-text-field
       label="Search"
-      placeholder="Dense & Rounded"
+      placeholder=""
+      class="mdi mdi-magnify"
       filled
       rounded
       dense
     ></v-text-field>
 
     <v-btn elevation="2"> ค้นหา</v-btn>
-    
+
     <v-data-table
       :headers="headers"
       :items="theemployee"
