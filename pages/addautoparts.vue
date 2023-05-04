@@ -116,13 +116,13 @@
           filter
           variant="outlined"
         >
-          BMW
+          Volvo
         </v-chip>
         <v-chip
           filter
           variant="outlined"
         >
-          Volvo
+          BMW
         </v-chip>
         
       </v-chip-group>
