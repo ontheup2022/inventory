@@ -1,6 +1,13 @@
 <template>
   <v-col>
-    <v-text-field label="Search" placeholder="" filled rounded dense>
+    <v-text-field
+      label="Search"
+      placeholder=""
+      class="mdi mdi-magnify"
+      filled
+      rounded
+      dense
+    >
     </v-text-field>
     <v-btn elevation="2">ค้นหา</v-btn>
     <v-btn
@@ -21,6 +28,15 @@
       density="compact"
       item-key="name"
     >
+      <template slot="chooseaparts" slot-scope="row">
+        <td>{{ row.item.no }}</td>
+        <td>{{ row.item.result }}</td>
+        <td>
+          <v-btn class="mx-2" fab dark small color="pink">
+            <v-icon dark>แก้ไข</v-icon>
+          </v-btn>
+        </td>
+      </template>
     </v-data-table>
   </v-col>
 </template>
