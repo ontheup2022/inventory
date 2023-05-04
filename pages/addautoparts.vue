@@ -44,6 +44,7 @@
       v-model="Brand"
         column
         multiple
+        selected-class="text-primary"
       >
         <v-chip
           filter
@@ -73,25 +74,25 @@
           filter
           variant="outlined"
         >
-          mitsubishi
+          Mitsubishi
         </v-chip>
         <v-chip
           filter
           variant="outlined"
         >
-          nissan
+          Nissan
         </v-chip>
         <v-chip
           filter
           variant="outlined"
         >
-          mazda
+          Mazda
         </v-chip>
         <v-chip
           filter
           variant="outlined"
         >
-          ford
+          Ford
         </v-chip>
         <v-chip
           filter
@@ -109,26 +110,21 @@
           filter
           variant="outlined"
         >
-          nissan
+          Chevrolet
         </v-chip>
         <v-chip
           filter
           variant="outlined"
         >
-          nissan
+          BMW
         </v-chip>
         <v-chip
           filter
           variant="outlined"
         >
-          nissan
+          Volvo
         </v-chip>
-        <v-chip
-          filter
-          variant="outlined"
-        >
-          nissan
-        </v-chip>
+        
       </v-chip-group>
     </v-card-text>
 
