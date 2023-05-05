@@ -1,3 +1,4 @@
+
 <template>
   <v-form>
     <v-container>
@@ -6,7 +7,7 @@
 
         
         <v-col cols="48" sm="24" md="12">
-          <v-text-field label="ชื่ออะไหล่" outlined></v-text-field>
+          <v-text-field label="ประเภทอะไหล่" outlined></v-text-field>
         </v-col>
 
         <v-col cols="24" sm="12" md="6">
