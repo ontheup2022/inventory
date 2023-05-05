@@ -4,6 +4,11 @@
       <v-row>
         
 
+        
+        <v-col cols="48" sm="24" md="12">
+          <v-text-field label="ชื่ออะไหล่" outlined></v-text-field>
+        </v-col>
+
         <v-col cols="24" sm="12" md="6">
           <v-text-field label="ยี่ห้ออะไหล่" outlined></v-text-field>
         </v-col>
@@ -98,7 +103,7 @@
           filter
           variant="outlined"
         >
-          MG
+        Chevrolet
         </v-chip>
         <v-chip
           filter
@@ -110,7 +115,7 @@
           filter
           variant="outlined"
         >
-          Chevrolet
+          MG
         </v-chip>
         <v-chip
           filter
