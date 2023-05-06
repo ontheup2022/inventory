@@ -6,6 +6,7 @@
       :clipped="clipped"
       fixed
       app
+      color="#90CAF9"
     >
       <v-list>
         <v-list-item
@@ -24,7 +25,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar :clipped-left="clipped" fixed app color="#1E88E5">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
       <v-toolbar-title>Inventory Autoparts</v-toolbar-title>
@@ -65,12 +66,17 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span color="#000000"
+        >SeniorProject MFU &copy; {{ new Date().getFullYear() }}</span
+      >
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import { createApp } from "vue";
+import { createVuetify } from "vuetify";
+
 export default {
   name: "DefaultLayout",
   data() {
@@ -99,11 +105,6 @@ export default {
           title: "เบิกอะไหล่",
           to: "/buyparts",
         },
-        // {
-        //   icon: "mdi-chart-bubble",
-        //   title: "ลดรายชื่อ",
-        //   to: "/deletecontacts",
-        // },
         {
           icon: "mdi-wallet-bifold-outline",
           title: "สั่งซื้ออะไหล่",
@@ -113,7 +114,7 @@ export default {
           icon: "mdi-content-paste",
           title: "สรุปรายงาน",
           to: "/reportday",
-          to: "/reportmonth",
+          // to: "/reportmonth",
         },
         {
           icon: "mdi-bell-alert",
