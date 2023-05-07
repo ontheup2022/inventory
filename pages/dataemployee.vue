@@ -20,8 +20,7 @@
       to="/addemployee"
     >
       เพิ่มพนักงาน
-      <!-- <template v-slot:loader>
-      </template> -->
+      <template v-slot:loader> </template>
     </v-btn>
     <v-data-table
       :headers="headers"
