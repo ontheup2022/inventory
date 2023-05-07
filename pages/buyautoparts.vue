@@ -133,13 +133,13 @@ export default {
       name: 0,
       datetoorder: "",
       company: "",
-      priceallparts: "",
+      priceallaparts: "",
     },
     defaultItem: {
       name: 0,
       datetoorder: "",
       company: "",
-      priceallparts: "",
+      priceallaparts: "",
     },
   }),
 
@@ -169,19 +169,19 @@ export default {
           name: "1",
           datetoorder: "23022022",
           company: "vfbfgngfnfg",
-          priceallparts: 3200,
+          priceallaparts: 3200,
         },
         {
           name: "2",
           datetoorder: "23022022",
           company: "vfbfgngfnfg",
-          priceallparts: 3600,
+          priceallaparts: 3600,
         },
         {
           name: "3",
           datetoorder: "23022022",
           company: "vfbfgngfnfg",
-          priceallparts: 3500,
+          priceallaparts: 3500,
         },
       ];
     },
