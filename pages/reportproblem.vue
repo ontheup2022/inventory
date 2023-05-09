@@ -31,7 +31,7 @@
       <v-toolbar flat>
         <v-dialog v-model="dialogReport" max-width="500px">
           <v-card>
-            <v-card-title class="text-h5"
+            <v-card-title v-model="dialogReport" class="text-h5"
               >รายงานปัญหาให้กับแอดมินเรียบร้อย</v-card-title
             >
             <v-card-actions>
@@ -48,9 +48,7 @@
     </template>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn color="success" depressed @click="dialogReport">
-        ส่งให้แอดมิน
-      </v-btn>
+      <v-btn color="success" @click="dialogReport"> ส่งให้แอดมิน </v-btn>
     </v-card-actions></v-card
   >
 </template>

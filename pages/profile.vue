@@ -18,59 +18,60 @@
       </v-list-item-content>
     </v-list-item>
 
-    <v-card class="mx-auto" max-width="500">
-      <v-list>
-        <v-list-item-group v-model="model">
-          <v-list-item v-for="(item, i) in items" :key="i">
-            <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.text"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-card>
+    <div class="text-left" id="box1">
+      <v-bottom-sheet v-model="sheet" inset>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="orange" dark v-bind="attrs" v-on="on">
+            Open Inset
+          </v-btn>
+        </template>
+        <v-sheet class="text-center" height="200px">
+          <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
+            close
+          </v-btn>
+          <div class="my-3">This is a bottom sheet using the inset prop</div>
+        </v-sheet>
+      </v-bottom-sheet>
+    </div>
+
+    <div class="text-center" id="box2">
+      <v-bottom-sheet v-model="sheet" inset>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="orange" dark v-bind="attrs" v-on="on">
+            Open Inset
+          </v-btn>
+        </template>
+        <v-sheet class="text-center" height="200px">
+          <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
+            close
+          </v-btn>
+          <div class="my-3">This is a bottom sheet using the inset prop</div>
+        </v-sheet>
+      </v-bottom-sheet>
+    </div>
+
+    <div class="text-right" id="box3">
+      <v-bottom-sheet v-model="sheet" inset>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="orange" dark v-bind="attrs" v-on="on">
+            Open Inset
+          </v-btn>
+        </template>
+        <v-sheet class="text-center" height="200px">
+          <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
+            close
+          </v-btn>
+          <div class="my-3">This is a bottom sheet using the inset prop</div>
+        </v-sheet>
+      </v-bottom-sheet>
+    </div>
   </v-card>
 </template>
 
 <script>
-import { createApp } from "vue";
-import { createVuetify } from "vuetify";
-
-export default {
-  name: "menuprofile",
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: "mdi-inbox-arrow-down",
-          text: "Inbox To Employee",
-          to: "/employeehomeinbox",
-        },
-        {
-          icon: "mdi-account-edit",
-          text: "Edit Profile",
-        },
-        {
-          icon: "mdi-account-check",
-          text: "Manage Employee",
-          to: "/memberhome",
-        },
-        {
-          icon: "mdi-logout",
-          text: "Log Out",
-        },
-      ],
-      model: 1,
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-    };
-  },
-};
+// export default {
+//   data: () => ({
+//     sheet: false,
+//   }),
+// };
 </script>
