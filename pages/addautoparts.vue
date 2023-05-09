@@ -6,12 +6,16 @@
         
 
         
-        <v-col cols="48" sm="24" md="12">
+        <v-col cols="24" sm="12" md="6">
           <v-text-field label="ประเภทอะไหล่" outlined></v-text-field>
         </v-col>
 
         <v-col cols="24" sm="12" md="6">
           <v-text-field label="ยี่ห้ออะไหล่" outlined></v-text-field>
+        </v-col>
+
+        <v-col cols="24" sm="12" md="6">
+          <v-text-field label="บริษััท" placeholder="" outlined></v-text-field>
         </v-col>
 
         <v-col cols="24" sm="12" md="6">
@@ -25,6 +29,7 @@
         <v-col cols="24" sm="12" md="6">
           <v-text-field label="ราคา/หน่วย" placeholder="" outlined></v-text-field>
         </v-col>
+
 
       </v-row>
       <h2 class="text-h7 mb-5">

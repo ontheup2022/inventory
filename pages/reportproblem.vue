@@ -5,7 +5,7 @@
     </v-toolbar>
 
     <v-card-text>
-      <v-text-field filled label="เรื่อง" value=""></v-text-field>
+      <v-text-field filled label="หัวข้อเรื่อง" value=""></v-text-field>
 
       <v-textarea filled label="รายละเอียด" value=""></v-textarea>
 

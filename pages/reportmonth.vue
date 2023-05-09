@@ -5,11 +5,14 @@
 
       <v-btn value="center" to="/reportmonth"> สรุปรายเดือน </v-btn>
     </v-btn-toggle>
+    
     <v-expansion-panels>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
         <v-expansion-panel-header> January </v-expansion-panel-header>
         <v-expansion-panel-content>555 </v-expansion-panel-content>
-      </v-expansion-panel>
+      </v-expansion-panel></v-expansion-panels>
+
+      <v-expansion-panels>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
         <v-expansion-panel-header> Febuary </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -27,13 +30,69 @@
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
+      </v-expansion-panels>
+
+      <v-expansion-panels>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
-        <v-expansion-panel-header> Today </v-expansion-panel-header>
-        <v-expansion-panel-content> </v-expansion-panel-content>
-      </v-expansion-panel>
+        <v-expansion-panel-header> March </v-expansion-panel-header>
+        <v-expansion-panel-content>555 </v-expansion-panel-content>
+      </v-expansion-panel></v-expansion-panels>
+
+      <v-expansion-panels>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
-        <v-expansion-panel-header> Today </v-expansion-panel-header>
+        <v-expansion-panel-header> April </v-expansion-panel-header>
         <v-expansion-panel-content> </v-expansion-panel-content>
-      </v-expansion-panel> </v-expansion-panels
-  ></v-col>
+      </v-expansion-panel> </v-expansion-panels>
+
+      <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> May </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+      <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> June </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+      <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> July </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+      <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> August </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+      <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> September </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+    <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> October </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+      <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> November </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+      <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> December </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels>
+
+      
+      
+      </v-col>
 </template>   
