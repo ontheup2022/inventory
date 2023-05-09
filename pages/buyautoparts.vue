@@ -101,6 +101,7 @@
       </template>
       <template v-slot:item.chooseaparts="{ item }">
         <v-btn small class="mr-2" @click="editItem(item)"> แก้ไข </v-btn>
+        <v-btn small class="mr-2" @click="deleteItem(item)"> ลบออก </v-btn>
         <!-- <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon> -->
       </template>
       <template v-slot:no-data>

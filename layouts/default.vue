@@ -86,6 +86,11 @@ export default {
       fixed: false,
       items: [
         {
+          icon: "mdi-account-circle-outline",
+          title: "บัญชีของคุณ",
+          to: "/profile",
+        },
+        {
           icon: "mdi-menu",
           title: "เมนู",
           to: "/admin",
@@ -120,6 +125,11 @@ export default {
           icon: "mdi-bell-alert",
           title: "การแจ้งเตือน",
           to: "/notifications",
+        },
+        {
+          icon: "mdi-alert",
+          title: "แจ้งปัญหาการใช้งาน",
+          to: "/reportproblem",
         },
         {
           icon: "mdi-logout",

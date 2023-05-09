@@ -5,59 +5,35 @@
 
       <v-btn value="center" to="/reportmonth"> สรุปรายเดือน </v-btn>
     </v-btn-toggle>
-    <!-- <v-data-table
-      :headers="headers"
-      :items="tableday"
-      :items-per-page="5"
-      class="elevation-2"
-      density="compact"
-      item-key="name"
-    >
-    </v-data-table>
-  </v-col> -->
-
-    <v-data-table
-      :headers="headers"
-      :items="tablemonth"
-      :items-per-page="5"
-      class="elevation-2"
-      density="compact"
-      item-key="name"
-    >
-    </v-data-table>
-  </v-col>
+    <v-expansion-panels>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> January </v-expansion-panel-header>
+        <v-expansion-panel-content>555 </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> Febuary </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-alert
+            border="left"
+            colored-border
+            color="deep-purple accent-4"
+            elevation="2"
+          >
+            Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis
+            ut velit. Nulla facilisi.. Morbi mollis tellus ac sapien. Fusce vel
+            dui. Praesent ut ligula non mi varius sagittis. Vivamus consectetuer
+            hendrerit lacus. Suspendisse enim turpis, dictum sed, iaculis a,
+            condimentum nec, nisi.
+          </v-alert>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> Today </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> Today </v-expansion-panel-header>
+        <v-expansion-panel-content> </v-expansion-panel-content>
+      </v-expansion-panel> </v-expansion-panels
+  ></v-col>
 </template>   
-
-    
-
-
-<script>
-export default {
-  data() {
-    return {
-      // headers: [
-      //   {
-      //     text: "ประจำวันที่",
-      //     align: "start",
-      //     sortable: false,
-      //     value: "datezone",
-      //   },
-      //   { text: "จำนวนการเบิกอะไหล่", value: "dayautoparts" },
-      //   { text: "เลือก", value: "choose" },
-      // ],
-      // tableday: [],
-      headers: [
-        {
-          text: "ประจำเดือน",
-          align: "start",
-          sortable: false,
-          value: "monthzone",
-        },
-        { text: "จำนวนการเบิกอะไหล่", value: "dayautoparts2" },
-        { text: "เลือก", value: "choose2" },
-      ],
-      tablemonth: [],
-    };
-  },
-};
-</script>
