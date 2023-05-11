@@ -35,19 +35,14 @@
               <v-card-text>
                 <v-container>
                   <v-row>
-                    <v-col cols="12" sm="6" md="4">
-                      <v-text-field
-                        v-model="editedItem.name"
-                        label="No."
-                      ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" sm="6" md="4">
+                    
+                    <v-col cols="24" sm="12" md="8">
                       <v-text-field
                         v-model="editedItem.calories"
-                        label="หมายเลขรายการ"
+                        label="รายการ"
                       ></v-text-field>
                     </v-col>
-                    <v-col cols="12" sm="6" md="4">
+                    <v-col cols="24" sm="12" md="8">
                       <v-text-field
                         v-model="editedItem.fat"
                         label="จำนวน"
@@ -175,19 +170,19 @@ export default {
       this.theemployee = [
         {
           name: "1",
-          partscode: "0000000a",
+          partscode: "174958",
           listed: "หัวเทียน",
           number: 8,
         },
         {
           name: "2",
-          partscode: "0000000b",
+          partscode: "289621",
           listed: "ผ้าเบรก",
           number: 8,
         },
         {
           name: "3",
-          partscode: "0000000c",
+          partscode: "473264",
           listed: "ท่อไอเสีย",
           number: 8,
         },

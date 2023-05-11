@@ -1,10 +1,10 @@
 <template>
   <v-row justify="center" align="baseline">
-    <v-col>
+    <v-col cols="10" md="5" sm="6">
       <v-btn
-        color="primary"
+        color="#6699FF"
         depressed
-        elevation="36"
+        elevation="20"
         large
         x-large
         nuxt
@@ -13,11 +13,11 @@
         ข้อมูลอะไหล่ยนต์
       </v-btn>
     </v-col>
-    <v-col>
+    <v-col cols="10" md="5" sm="6">
       <v-btn
-        color="primary"
+        color="#6699FF"
         depressed
-        elevation="36"
+        elevation="20"
         large
         x-large
         nuxt
@@ -26,11 +26,11 @@
         เบิกอะไหล่
       </v-btn>
     </v-col>
-    <v-col>
+    <v-col cols="10" md="5" sm="6">
       <v-btn
-        color="primary"
+        color="#6699FF"
         depressed
-        elevation="36"
+        elevation="20"
         large
         x-large
         nuxt
@@ -39,11 +39,11 @@
         สรุปรายงาน
       </v-btn>
     </v-col>
-    <v-col>
+    <v-col cols="10" md="5" sm="6">
       <v-btn
-        color="primary"
+        color="#6699FF"
         depressed
-        elevation="36"
+        elevation="20"
         large
         x-large
         nuxt
@@ -52,11 +52,11 @@
         ข้อมูลพนักงาน
       </v-btn>
     </v-col>
-    <v-col cols="36" md="36" sm="12">
+    <v-col cols="10" md="5" sm="6">
       <v-btn
-        color="primary"
+        color="#6699FF"
         depressed
-        elevation="36"
+        elevation="20"
         large
         x-large
         nuxt
@@ -65,11 +65,11 @@
         สั่งซื้ออะไหล่
       </v-btn>
     </v-col>
-    <v-col cols="36" md="36" sm="12">
+    <v-col cols="10" md="5" sm="6">
       <v-btn
-        color="primary"
+        color="#6699FF"
         depressed
-        elevation="36"
+        elevation="20"
         large
         x-large
         nuxt

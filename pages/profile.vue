@@ -18,11 +18,11 @@
       </v-list-item-content>
     </v-list-item>
 
-    <div class="text-left" id="box1">
+    <!-- <div class="text-left" id="box1">
       <v-bottom-sheet v-model="sheet" inset>
         <template v-slot:activator="{ on, attrs }">
           <v-btn color="orange" dark v-bind="attrs" v-on="on">
-            Open Inset
+            O
           </v-btn>
         </template>
         <v-sheet class="text-center" height="200px">
@@ -32,13 +32,13 @@
           <div class="my-3">This is a bottom sheet using the inset prop</div>
         </v-sheet>
       </v-bottom-sheet>
-    </div>
+    </div> -->
 
-    <div class="text-center" id="box2">
+    <!-- <div class="text-center" id="box1">
       <v-bottom-sheet v-model="sheet" inset>
         <template v-slot:activator="{ on, attrs }">
           <v-btn color="orange" dark v-bind="attrs" v-on="on">
-            Open Inset
+            a
           </v-btn>
         </template>
         <v-sheet class="text-center" height="200px">
@@ -48,13 +48,13 @@
           <div class="my-3">This is a bottom sheet using the inset prop</div>
         </v-sheet>
       </v-bottom-sheet>
-    </div>
+    </div> -->
 
-    <div class="text-right" id="box3">
+    <!-- <div class="text-right" id="box3">
       <v-bottom-sheet v-model="sheet" inset>
         <template v-slot:activator="{ on, attrs }">
           <v-btn color="orange" dark v-bind="attrs" v-on="on">
-            Open Inset
+            c
           </v-btn>
         </template>
         <v-sheet class="text-center" height="200px">
@@ -64,7 +64,57 @@
           <div class="my-3">This is a bottom sheet using the inset prop</div>
         </v-sheet>
       </v-bottom-sheet>
-    </div>
+    </div> -->
+
+    <!-- <div class="text-right" id="box2">
+      <v-bottom-sheet v-model="sheet" inset>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="orange" dark v-bind="attrs" v-on="on">
+            Log out
+          </v-btn>
+        </template>
+        <v-sheet class="text-center" height="200px">
+          <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
+            close
+          </v-btn>
+          <div class="my-3">This is a bottom sheet using the inset prop</div>
+        </v-sheet>
+      </v-bottom-sheet>
+    </div> -->
+
+    <div class="text-right" id="box1">
+    <v-btn
+      color="info"
+      class="mr-4"
+      to ="employeehomeinbox"
+    >
+      รายชื่อพนักงาน
+    </v-btn>
+
+    <v-btn
+      color="info"
+      class="mr-4"
+      @click="reset"
+    >
+      จัดการการเบิก
+    </v-btn>
+
+    <v-btn
+      color="warning"
+      class="mr-4"
+      @click="resetValidation"
+    >
+      ขอความรายงานปัญหา
+    </v-btn>
+
+    <v-btn
+      color="error"
+      class="mr-4"
+      @click="reset"
+    >
+      ออกจากระบบ
+    </v-btn>
+</div>
   </v-card>
 </template>
 

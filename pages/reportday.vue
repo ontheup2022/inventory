@@ -29,32 +29,65 @@
     <v-expansion-panels>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
         <v-expansion-panel-header> Today </v-expansion-panel-header>
-        <v-expansion-panel-content>555 </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel v-for="(item, i) in 1" :key="i">
-        <v-expansion-panel-header> Today </v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-alert
             border="left"
             colored-border
-            color="deep-purple accent-4"
+            color="blue accent-4"
             elevation="2"
           >
-            Aliquam eu nunc. Fusce commodo aliquam arcu. In consectetuer turpis
-            ut velit. Nulla facilisi.. Morbi mollis tellus ac sapien. Fusce vel
-            dui. Praesent ut ligula non mi varius sagittis. Vivamus consectetuer
-            hendrerit lacus. Suspendisse enim turpis, dictum sed, iaculis a,
-            condimentum nec, nisi.
+          ยังไม่มียอดการเบิกและสั่งซื้อในช่วงเวลานี้
+
+          </v-alert>  
+        
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel v-for="(item, i) in 1" :key="i">
+        <v-expansion-panel-header> yesterday </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-alert
+            border="left"
+            colored-border
+            color="red accent-4"
+            elevation="2"
+          >
+          ยังไม่ถึงกำหนด
+
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
-        <v-expansion-panel-header> Today </v-expansion-panel-header>
-        <v-expansion-panel-content> </v-expansion-panel-content>
+        <v-expansion-panel-header> 2 days ago </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          
+          <v-alert
+            border="left"
+            colored-border
+            color="red accent-4"
+            elevation="2"
+          >
+          ยังไม่ถึงกำหนด
+
+          </v-alert>
+
+        </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
-        <v-expansion-panel-header> Today </v-expansion-panel-header>
-        <v-expansion-panel-content> </v-expansion-panel-content>
+        <v-expansion-panel-header> 3 days ago </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          
+
+          <v-alert
+            border="left"
+            colored-border
+            color="red accent-4"
+            elevation="2"
+          >
+          ยังไม่ถึงกำหนด
+
+          </v-alert>
+
+        </v-expansion-panel-content>
       </v-expansion-panel> </v-expansion-panels
   ></v-col>
 </template>   

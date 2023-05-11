@@ -43,12 +43,45 @@ export default {
           sortable: false,
           value: "name",
         },
-        { text: "หมายเลขพนักงาน", value: "calories" },
+        { text: "หมายเลขพนักงาน", value: "number" },
         { text: "ชื่อ-นามสกุล", value: "nameemployee" },
         { text: "เลือก", value: "chooseemploy" },
       ],
-      theemployee: [],
-    };
+      theemployee: [
+
+
+    
+        {
+          name: "1",
+          number: "00031",
+          nameemployee: "ธนาธร",
+
+          
+        },
+        {
+          name: "2",
+          number: "00032",
+          nameemployee: "พิธา",
+
+           
+        },
+        {
+          name: "3",
+          number: "00033",
+          nameemployee: "รังสิมันต์ โรม",
+
+        },
+
+        {
+          name: "4",
+          number: "00034",
+          nameemployee: "วิโรจน์ ",
+
+        },
+      
+      ],
+    }
   },
-};
-</script>
+}
+
+      </script>
