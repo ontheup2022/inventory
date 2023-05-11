@@ -9,7 +9,7 @@
       dense
     >
     </v-text-field>
-    <v-btn elevation="2">ค้นหา</v-btn>
+
     <v-btn
       elevation="6"
       class="ma-2"

@@ -9,7 +9,7 @@
       dense
     ></v-text-field>
 
-    <v-btn elevation="2">ค้นหา</v-btn>
+   
 
     <v-data-table
       :headers="headers"

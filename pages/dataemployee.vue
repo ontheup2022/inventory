@@ -10,7 +10,7 @@
     >
     </v-text-field>
 
-    <v-btn elevation="2"> ค้นหา</v-btn>
+
     <v-btn
       class="ma-2"
       :loading="loading2"
@@ -45,7 +45,7 @@ export default {
         },
         { text: "หมายเลขพนักงาน", value: "number" },
         { text: "ชื่อ-นามสกุล", value: "nameemployee" },
-        { text: "เลือก", value: "chooseemploy" },
+        { text: "เบอร์โทรศัพท์", value: "telemployee" },
       ],
       theemployee: [
 
@@ -54,29 +54,29 @@ export default {
         {
           name: "1",
           number: "00031",
-          nameemployee: "ธนาธร",
-
+          nameemployee: "ธนาธร จึงรุ่งเรืองกิจ",
+          telemployee: "08046289xx",
           
         },
         {
           name: "2",
           number: "00032",
-          nameemployee: "พิธา",
-
+          nameemployee: "พิธา ลิ้มเจริญรัตน์",
+          telemployee: "08057924xx",
            
         },
         {
           name: "3",
           number: "00033",
           nameemployee: "รังสิมันต์ โรม",
-
+          telemployee: "08025496xx",
         },
 
         {
           name: "4",
           number: "00034",
-          nameemployee: "วิโรจน์ ",
-
+          nameemployee: "วิโรจน์ ลักขณาอดิศร",
+          telemployee: "080754992xx",
         },
       
       ],

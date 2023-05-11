@@ -30,15 +30,8 @@
         Save</v-btn
       >
       <v-btn elevation="2" depressed color="error"> Cancel</v-btn> -->
-      <v-btn
-        elevation="2"
-        class="ma-2"
-        :loading="loading2"
-        :disabled="loading2"
-        color="success"
-      >
-        ค้นหา</v-btn
-      >
+      
+      
 
       <!-- <v-btn
       elevation="2"

@@ -5,74 +5,71 @@
     <v-container>
       <v-row>
         <v-col
-          cols="12"
-          sm="6"
-          md="3"
+          cols="24"
+          sm="12"
+          md="6"
         >
           <v-text-field
-            label="นาม"
+            label="หมายเลขอะไหล่"
           ></v-text-field>
         </v-col>
 
         <v-col
-          cols="12"
-          sm="6"
-          md="3"
+        cols="24"
+          sm="12"
+          md="6"
         >
           <v-text-field
-            label="นามสกุล"
+            label="ประเภทอะไหล่"
             placeholder=""
           ></v-text-field>
         </v-col>
 
         <v-col
-          cols="12"
-          sm="6"
-          md="3"
+        cols="24"
+          sm="12"
+          md="6"
         >
           <v-text-field
-            label="อายุ"
+            label="ยี่ห้อ"
             solo
           ></v-text-field>
         </v-col>
 
         <v-col
-          cols="12"
-          sm="6"
-          md="3"
+        cols="24"
+          sm="12"
+          md="6"
         >
           <v-text-field
-            label="อีเมล"
+            label="บริษัท"
             placeholder=""
           ></v-text-field>
         </v-col>
 
         <v-col
-          cols="12"
-          sm="6"
-          md="3"
+        cols="24"
+          sm="12"
+          md="6"
         >
           <v-text-field
-            label="เบอร์โทรศัพท์"
+            label="จำนวนที่ต้องการเบิก"
             filled
           ></v-text-field>
         </v-col>
 
-       
+        <v-btn
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="success"
+      @click="loader = 'loading2'"
+      to="/buyparts"
+    >
+      ยืนยัน
+      <template v-slot:loader> </template>
+    </v-btn>
 
-        
-
-        <v-col
-          cols="18"
-          sm="6"
-          md="9"
-        >
-          <v-text-field
-            label="ที่อยู่"
-            placeholder=""
-            outlined
-          ></v-text-field>
-        </v-col>
       </v-row>
     </v-container>
   </v-form>

@@ -94,7 +94,7 @@
     <v-btn
       color="info"
       class="mr-4"
-      @click="reset"
+      to ="notifications"
     >
       จัดการการเบิก
     </v-btn>
