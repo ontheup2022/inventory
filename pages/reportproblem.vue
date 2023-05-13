@@ -63,104 +63,17 @@
 <script>
 export default {
   data: () => ({
-    //dialog: false,
-    //dialogReport: false,
-    // headers: [
-    //   {
-    //     text: "No.",
-    //     align: "numbers",
-    //     sortable: false,
-    //     value: "name",
-    //   },
-    //   { text: "วันที่สั่ง", value: "datetoorder" },
-    //   { text: "บริษัท", value: "company" },
-    //   { text: "ยอดรวม", value: "priceallaparts" },
-    //   { text: "เลือก", value: "chooseaparts", sortable: false },
-    // ],
-    // thebuyautoparts: [],
-    // editedIndex: -1,
-    // editedItem: {
-    //   name: 0,
-    //   datetoorder: "",
-    //   company: "",
-    //   priceallaparts: "",
-    // },
-    // defaultItem: {
-    //   name: 0,
-    //   datetoorder: "",
-    //   company: "",
-    //   priceallaparts: "",
-    // },
-  }),
-
-  //   computed: {
-  //     formTitle() {
-  //       return this.editedIndex === -1 ? "New Item" : "Edit Item";
-  //     },
-  //   },
-
-  //   watch: {
-  //     dialog(val) {
-  //       val || this.close();
-  //     },
-  //     dialogDelete(val) {
-  //       val || this.closeDelete();
-  //     },
-  //   },
-
-  //   created() {
-  //     this.initialize();
-  //   },
+   
+ 
 
   methods: {
-    //     initialize() {
-    //       this.thebuyautoparts = [
-    //         {
-    //           name: "1",
-    //           datetoorder: "23022022",
-    //           company: "vfbfgngfnfg",
-    //           priceallaparts: 3200,
-    //         },
-    //         {
-    //           name: "2",
-    //           datetoorder: "23022022",
-    //           company: "vfbfgngfnfg",
-    //           priceallaparts: 3600,
-    //         },
-    //         {
-    //           name: "3",
-    //           datetoorder: "23022022",
-    //           company: "vfbfgngfnfg",
-    //           priceallaparts: 3500,
-    //         },
-    //       ];
-    //     },
-
-    // editItem(item) {
-    //   this.editedIndex = this.thebuyautoparts.indexOf(item);
-    //   this.editedItem = Object.assign({}, item);
-    //   this.dialog = true;
-    // },
-
-    // deleteItem(item) {
-    //   this.editedIndex = this.thebuyautoparts.indexOf(item);
-    //   this.editedItem = Object.assign({}, item);
-    //   this.dialogDelete = true;
-    // },
-
+  
     deleteItemConfirm() {
       this.reportproblem.splice(this.editedIndex, 1);
       this.closeDelete();
     },
 
-    // close() {
-    //   this.dialog = false;
-    //   this.$nextTick(() => {
-    //     this.editedItem = Object.assign({}, this.defaultItem);
-    //     this.editedIndex = -1;
-    //   });
-    // },
-
+   
     closeDelete() {
       this.dialogReport = false;
       this.$nextTick(() => {
