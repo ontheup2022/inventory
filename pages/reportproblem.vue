@@ -14,18 +14,11 @@
       <v-item-group multiple>
         <v-subheader>Tags</v-subheader>
         <v-item v-for="n in 1" :key="n" v-slot="{ active, toggle }">
-
-          <v-chip-group
-          multiple
-          active-class="primary--text"
-        >
-          <v-chip
-            v-for="tag in tags"
-            :key="tag"
-          >
-            {{ tag }}
-          </v-chip>
-        </v-chip-group>
+          <v-chip-group multiple active-class="primary--text">
+            <v-chip v-for="tag in tags" :key="tag">
+              {{ tag }}
+            </v-chip>
+          </v-chip-group>
 
           <!-- <v-chip
             active-class="purple--text"
@@ -189,18 +182,18 @@ export default {
 </script>
 
 <script>
-  export default {
-    data: () => ({
-      tags: [
-        'ข้อมูลคลาดเคลื่่อน',
-        'รายชื่อพนักงานไม่ถูกต้อง',
-        'ไม่สามารถเบิกอะไหล่ได้',
-        'ไม่สามารถสั่งซื้อได้',
-        'การแจ้งเตือนผิดปกติ',
-        'ลืมรหัสผ่่าน',
-        'ระบบมีบัคไม่ทราบสาเหตุ',
-        'อื่นๆ',
-      ],
-    }),
-  }
+export default {
+  data: () => ({
+    tags: [
+      "ข้อมูลคลาดเคลื่อน",
+      "รายชื่อพนักงานไม่ถูกต้อง",
+      "ไม่สามารถเบิกอะไหล่ได้",
+      "ไม่สามารถสั่งซื้อได้",
+      "การแจ้งเตือนผิดปกติ",
+      "ลืมรหัสผ่าน",
+      "ระบบมีบัคไม่ทราบสาเหตุ",
+      "อื่นๆ",
+    ],
+  }),
+};
 </script>
