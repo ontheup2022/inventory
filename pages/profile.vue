@@ -83,38 +83,20 @@
     </div> -->
 
     <div class="text-right" id="box1">
-    <v-btn
-      color="info"
-      class="mr-4"
-      to ="employeehomeinbox"
-    >
-      รายชื่อพนักงาน
-    </v-btn>
+      <v-btn color="info" class="mr-4" to="employeehomeinbox">
+        รายชื่อพนักงาน
+      </v-btn>
 
-    <v-btn
-      color="info"
-      class="mr-4"
-      to ="notifications"
-    >
-      จัดการการเบิก
-    </v-btn>
+      <v-btn color="info" class="mr-4" to="notifications">
+        จัดการการเบิก
+      </v-btn>
 
-    <v-btn
-      color="warning"
-      class="mr-4"
-      @click="resetValidation"
-    >
-      ขอความรายงานปัญหา
-    </v-btn>
+      <v-btn color="warning" class="mr-4" @click="resetValidation">
+        ข้อความรายงานปัญหา
+      </v-btn>
 
-    <v-btn
-      color="error"
-      class="mr-4"
-      @click="reset"
-    >
-      ออกจากระบบ
-    </v-btn>
-</div>
+      <v-btn color="error" class="mr-4" @click="reset"> ออกจากระบบ </v-btn>
+    </div>
   </v-card>
 </template>
 

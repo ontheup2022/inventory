@@ -25,6 +25,7 @@
       <v-btn value="left" to="/reportday"> สรุปรายวัน </v-btn>
 
       <v-btn value="center" to="/reportmonth"> สรุปรายเดือน </v-btn>
+      <v-btn value="right" to="/reportyear"> สรุปรายปี </v-btn>
     </v-btn-toggle>
     <v-expansion-panels>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
@@ -36,10 +37,8 @@
             color="blue accent-4"
             elevation="2"
           >
-          ยังไม่มียอดการเบิกและสั่งซื้อในช่วงเวลานี้
-
-          </v-alert>  
-        
+            ยังไม่มียอดการเบิกและสั่งซื้อในช่วงเวลานี้
+          </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
@@ -51,45 +50,38 @@
             color="red accent-4"
             elevation="2"
           >
-          ยังไม่ถึงกำหนด
-
+            ยังไม่ถึงกำหนด
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
         <v-expansion-panel-header> 2 days ago </v-expansion-panel-header>
         <v-expansion-panel-content>
-          
           <v-alert
             border="left"
             colored-border
             color="red accent-4"
             elevation="2"
           >
-          ยังไม่ถึงกำหนด
-
+            ยังไม่ถึงกำหนด
           </v-alert>
-
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
         <v-expansion-panel-header> 3 days ago </v-expansion-panel-header>
         <v-expansion-panel-content>
-          
-
           <v-alert
             border="left"
             colored-border
             color="red accent-4"
             elevation="2"
           >
-          ยังไม่ถึงกำหนด
-
+            ยังไม่ถึงกำหนด
           </v-alert>
-
         </v-expansion-panel-content>
-      </v-expansion-panel> </v-expansion-panels
-  ></v-col>
+      </v-expansion-panel>
+    </v-expansion-panels></v-col
+  >
 </template>   
 
     

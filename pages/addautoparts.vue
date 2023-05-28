@@ -176,7 +176,7 @@
     
     
   
-  <script>
+<script>
 export default {
   name: "InspirePage",
 };
