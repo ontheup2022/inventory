@@ -1,39 +1,44 @@
-<!-- <template>
+<template>
   <v-form>
-    <v-container>
-      <v-row>
-        <v-col cols="24" sm="12" md="6">
-          <v-text-field label="ประเภทอะไหล่" outlined></v-text-field>
-        </v-col>
+    <v-form>
+      <v-container>
+        <v-row>
+          <v-col cols="24" sm="12" md="6">
+            <v-text-field label="ประเภทอะไหล่" outlined></v-text-field>
+          </v-col>
 
-        <v-col cols="24" sm="12" md="6">
-          <v-text-field label="ยี่ห้ออะไหล่" outlined></v-text-field>
-        </v-col>
+          <v-col cols="24" sm="12" md="6">
+            <v-text-field label="ยี่ห้ออะไหล่" outlined></v-text-field>
+          </v-col>
 
-        <v-col cols="24" sm="12" md="6">
-          <v-text-field label="บริษััท" placeholder="" outlined></v-text-field>
-        </v-col>
+          <v-col cols="24" sm="12" md="6">
+            <v-text-field
+              label="บริษััท"
+              placeholder=""
+              outlined
+            ></v-text-field>
+          </v-col>
 
-        <v-col cols="24" sm="12" md="6">
-          <v-text-field label="หน่วย" placeholder="" outlined></v-text-field>
-        </v-col>
+          <v-col cols="24" sm="12" md="6">
+            <v-text-field label="หน่วย" placeholder="" outlined></v-text-field>
+          </v-col>
 
-        <v-col cols="24" sm="12" md="6">
-          <v-text-field label="จำนวน" outlined></v-text-field>
-        </v-col>
+          <v-col cols="24" sm="12" md="6">
+            <v-text-field label="จำนวน" outlined></v-text-field>
+          </v-col>
 
-        <v-col cols="24" sm="12" md="6">
-          <v-text-field
-            label="ราคา/หน่วย"
-            placeholder=""
-            outlined
-          ></v-text-field>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-form>
+          <v-col cols="24" sm="12" md="6">
+            <v-text-field
+              label="ราคา/หน่วย"
+              placeholder=""
+              outlined
+            ></v-text-field>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-form>
 
-  <template>
+    <!-- <template> -->
     <v-container>
       <v-row>
         <v-col cols="12" sm="6" md="4">
@@ -133,112 +138,90 @@
         <v-spacer></v-spacer>
       </v-row>
     </v-container>
-  </v-form>
-  </template>
+    <!-- </v-form> -->
+    <!-- </template> -->
 
-  
-</template> -->
+    <!-- </template> -->
 
-<template>
-  <v-card>
-    <v-toolbar flat color="blue-grey" dark>
-      <v-toolbar-title>ส่งข้อความไปให้กับ...</v-toolbar-title>
-    </v-toolbar>
+    <!-- <template> -->
 
-    <v-card-text>
-      <v-text-field filled label="หัวข้อเรื่อง" value=""></v-text-field>
+    <!-- </template> -->
 
-      <v-textarea filled label="รายละเอียด" value=""></v-textarea>
+    <!-- <template> -->
+    <!-- </v-row> -->
+    <h2 class="text-h7 mb-5">ยี่ห้อรถที่ใช้ได้</h2>
+    <!-- </template> -->
 
-      <v-divider class="my-2"></v-divider>
-
-      <v-item-group multiple>
-        <v-subheader>Tags</v-subheader>
-        <v-item v-for="n in 1" :key="n" v-slot="{ active, toggle }">
-          <v-chip-group multiple active-class="primary--text">
-            <v-chip v-for="tag in tags" :key="tag">
-              {{ tag }}
-            </v-chip>
-          </v-chip-group>
-
-          <!-- <v-chip
-            active-class="purple--text"
-            :input-value="active"
-            @click="toggle"
-          >
-            Tag {{ tags }}
-          </v-chip> -->
-        </v-item>
-      </v-item-group>
-    </v-card-text>
-
-    <v-divider></v-divider>
-
-    <template v-slot:top>
-      <v-toolbar flat>
-        <v-dialog v-model="dialogReport" max-width="500px">
-          <v-card>
-            <v-card-title v-model="dialogReport" class="text-h5"
-              >ส่งข้อความ</v-card-title
-            >
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <!-- <v-btn color="blue darken-1" text @click="closeDelete"
-                  >Cancel</v-btn
-                > -->
-              <v-btn color="blue darken-1" text>OK</v-btn>
-              <v-spacer></v-spacer>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-toolbar>
-    </template>
-    <v-card-actions>
-      <v-spacer></v-spacer>
-      <v-btn color="success" @click="dialogReport">
-        ส่งข้อความให้พนักงาน
-      </v-btn>
-    </v-card-actions></v-card
-  >
-</template>
-
-
-<template>
-  <!-- </v-row> -->
-  <h2 class="text-h7 mb-5">ยี่ห้อรถที่ใช้ได้</h2>
-  <!-- </template> -->
-
-  <template>
+    <!-- <template> -->
     <v-toolbar flat color="deep-purple-accent-4" dark>
       <v-toolbar-title>Filter results</v-toolbar-title>
     </v-toolbar>
-  </template>
+    <!-- </template>
 </template>
-  <template>
-  <v-card-text>
-    <h3 class="text-h7 mb-5">เลือกยี่ห้อรถ</h3>
+  <template> -->
+    <div class="text-center">
+      <v-chip
+        class="ma-2"
+        color="indigo"
+        text-color="white"
+        prepend-icon="mdi-account-circle"
+      >
+        Mike
+      </v-chip>
 
-    <v-chip-group v-model="Brand" column multiple selected-class="text-primary">
-      <v-chip filter variant="outlined"> ทุกยี่ห้อ </v-chip>
-      <v-chip filter variant="outlined"> Toyota </v-chip>
-      <v-chip filter variant="outlined"> Isuzu </v-chip>
-      <v-chip filter variant="outlined"> Honda </v-chip>
-      <v-chip filter variant="outlined"> Mitsubishi </v-chip>
-      <v-chip filter variant="outlined"> Nissan </v-chip>
-      <v-chip filter variant="outlined"> Mazda </v-chip>
-      <v-chip filter variant="outlined"> Ford </v-chip>
-      <v-chip filter variant="outlined"> Chevrolet </v-chip>
-      <v-chip filter variant="outlined"> Suzuki </v-chip>
-      <v-chip filter variant="outlined"> MG </v-chip>
-      <v-chip filter variant="outlined"> Volvo </v-chip>
-      <v-chip filter variant="outlined"> BMW </v-chip>
-    </v-chip-group>
-  </v-card-text>
-</template>
-</template>
+      <v-chip
+        class="ma-2"
+        color="orange"
+        text-color="white"
+        append-icon="mdi-star"
+      >
+        Premium
+      </v-chip>
 
-<template>
-  <v-form>
+      <v-chip
+        class="ma-2"
+        color="primary"
+        text-color="white"
+        append-icon="mdi-cake-variant"
+      >
+        1 Year
+      </v-chip>
+
+      <v-chip class="ma-2" color="green" text-color="white">
+        <template v-slot:prepend>
+          <v-avatar class="green-darken-4"> 1 </v-avatar>
+        </template>
+        Years
+      </v-chip>
+
+      <v-chip
+        class="ma-2"
+        closable
+        color="teal"
+        text-color="white"
+        prepend-icon="mdi-checkbox-marked-circle"
+        :model-value="true"
+      >
+        Confirmed
+      </v-chip>
+
+      <v-chip
+        class="ma-2"
+        closable
+        color="teal"
+        text-color="white"
+        close-icon="mdi-delete"
+        prepend-icon="mdi-checkbox-marked-circle"
+        :model-value="true"
+      >
+        Confirmed
+      </v-chip>
+    </div>
+    <!-- </template>
+</template> -->
+
+    <!-- <template> -->
+
     <v-container>
       <v-btn depressed color="primary"> ตกลง </v-btn>
       <v-btn depressed color="error"> ยกเลิก </v-btn>
@@ -249,7 +232,7 @@
     
     
   
-  <script>
+<script>
 export default {
   name: "InspirePage",
 };
@@ -269,5 +252,15 @@ export default {
     modal: true,
     menu2: true,
   }),
+};
+</script>
+
+<script>
+export default {
+  methods: {
+    close() {
+      alert("Chip close clicked");
+    },
+  },
 };
 </script>
