@@ -10,7 +10,6 @@
     >
     </v-text-field>
 
-
     <v-btn
       class="ma-2"
       :loading="loading2"
@@ -20,7 +19,6 @@
       to="/addemployee"
     >
       เพิ่มพนักงาน
-      <template v-slot:loader> </template>
     </v-btn>
     <v-data-table
       :headers="headers"
@@ -48,22 +46,17 @@ export default {
         { text: "เบอร์โทรศัพท์", value: "telemployee" },
       ],
       theemployee: [
-
-
-    
         {
           name: "1",
           number: "00031",
           nameemployee: "ธนาธร จึงรุ่งเรืองกิจ",
           telemployee: "08046289xx",
-          
         },
         {
           name: "2",
           number: "00032",
           nameemployee: "พิธา ลิ้มเจริญรัตน์",
           telemployee: "08057924xx",
-           
         },
         {
           name: "3",
@@ -78,10 +71,8 @@ export default {
           nameemployee: "วิโรจน์ ลักขณาอดิศร",
           telemployee: "080754992xx",
         },
-      
       ],
-    }
+    };
   },
-}
-
-      </script>
+};
+</script>

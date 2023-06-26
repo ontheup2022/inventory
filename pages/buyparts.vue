@@ -30,8 +30,6 @@
         Save</v-btn
       >
       <v-btn elevation="2" depressed color="error"> Cancel</v-btn> -->
-      
-      
 
       <!-- <v-btn
       elevation="2"
@@ -116,6 +114,9 @@
         <template v-slot:item.pickup="{ item }">
           <v-btn small class="mr-2" to="/pickupautoparts">
             ทำเรื่องขอเบิก
+          </v-btn>
+          <v-btn small class="mr-2" to="/historybuyapart">
+            ดูประวัติการเบิก และความคืบหน้า
           </v-btn>
         </template>
         <template v-slot:no-data>
