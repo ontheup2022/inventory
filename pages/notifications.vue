@@ -48,7 +48,7 @@
           :disabled="loading2"
           color="light"
           @click="loader = 'loading2'"
-          to="/addemployee"
+          to="/pickupautoparts"
         >
           เบิกอีกครั้ง
         </v-btn>

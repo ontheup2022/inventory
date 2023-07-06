@@ -21,7 +21,7 @@
         large
         x-large
         nuxt
-        to="/buyparts"
+        to="/pricetag"
       >
         ดูประวัติการกำหนดราคา
       </v-btn>
