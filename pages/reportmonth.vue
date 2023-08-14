@@ -7,7 +7,9 @@
 
       <v-btn value="right" to="/reportyear"> สรุปรายปี </v-btn>
     </v-btn-toggle>
-
+    <v-col class="d-flex" cols="8" sm="6" value="right">
+      <v-select :items="items" filled label="เลือกปี"></v-select>
+    </v-col>
     <v-expansion-panels>
       <v-expansion-panel v-for="(item, i) in 1" :key="i">
         <v-expansion-panel-header> January </v-expansion-panel-header>

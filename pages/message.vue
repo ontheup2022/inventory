@@ -54,9 +54,21 @@
     </template>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn color="success" @click="dialogReport">
-        ส่งข้อความให้พนักงาน
-      </v-btn>
+      <div class="text-center">
+        <v-bottom-sheet v-model="sheet" persistent>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn color="green" dark v-bind="attrs" v-on="on">
+              ส่งข้อความให้พนักงาน
+            </v-btn>
+          </template>
+          <v-sheet class="text-center" height="200px">
+            <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
+              กลับไปที่รายชื่อ
+            </v-btn>
+            <div class="py-3">ส่งข้อความให้พนักงานแล้ว</div>
+          </v-sheet>
+        </v-bottom-sheet>
+      </div>
     </v-card-actions></v-card
   >
 </template>

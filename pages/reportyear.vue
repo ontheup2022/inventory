@@ -50,7 +50,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel></v-expansion-panels
@@ -66,7 +66,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -82,7 +82,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -98,7 +98,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -114,7 +114,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -130,7 +130,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -146,7 +146,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -162,7 +162,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -178,7 +178,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังถึงไม่กำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -194,7 +194,7 @@
             color="red accent-4"
             elevation="2"
           >
-            ยังไม่ถึงกำหนด
+            ไม่มีข้อมูล
           </v-alert>
         </v-expansion-panel-content>
       </v-expansion-panel>
