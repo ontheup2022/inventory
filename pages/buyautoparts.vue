@@ -1,14 +1,21 @@
 <template>
   <v-col>
-    <v-text-field
-      label="Search"
-      placeholder=""
-      class="mdi mdi-magnify"
-      filled
-      rounded
-      dense
-    >
-    </v-text-field>
+    <v-row justify="center" placeholder="">
+      <!-- <v-text-field label="วันที่" v-model="picker">
+          <v-date-picker v-model="picker"> </v-date-picker>
+        </v-text-field>
+        <v-text-field label="ยอดรวมทั้งหมด" v-model="picker">
+          <v-date-picker v-model="picker"> </v-date-picker>
+        </v-text-field> -->
+
+      <v-text-field label="Search" placeholder="" filled rounded dense>
+      </v-text-field>
+      <v-btn-toggle v-model="text" tile color="deep-purple accent-3" group>
+        <v-btn value="left" to="/buyautoparts"> เพิ่มข้อมูลอะไหล่ยนต์ </v-btn>
+
+        <v-btn value="center" to="/buyparts"> เบิกอะไหล่ </v-btn>
+      </v-btn-toggle>
+    </v-row>
 
     <v-btn
       elevation="6"
@@ -18,7 +25,7 @@
       color="success"
       @click="loader = 'loading2'"
       to="/addautoparts"
-      >เพิ่มข้อมูลการสั่งซื้อ</v-btn
+      >เพิ่มข้อมูลอะไหล่ยนต์</v-btn
     >
     <v-data-table
       :headers="headers"
@@ -199,8 +206,6 @@ export default {
           price: "1800",
           company: "Tenma Co.,LTD",
           priceallaparts: 3600,
-
-          
         },
       ];
     },

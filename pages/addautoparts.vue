@@ -12,11 +12,7 @@
           </v-col>
 
           <v-col cols="24" sm="12" md="6">
-            <v-text-field
-              label="บริษััท"
-              placeholder=""
-              outlined
-            ></v-text-field>
+            <v-text-field label="บริษัท" placeholder="" outlined></v-text-field>
           </v-col>
 
           <v-col cols="24" sm="12" md="6">
@@ -138,93 +134,32 @@
         <v-spacer></v-spacer>
       </v-row>
     </v-container>
-    <!-- </v-form> -->
-    <!-- </template> -->
 
-    <!-- </template> -->
-
-    <!-- <template> -->
-
-    <!-- </template> -->
-
-    <!-- <template> -->
-    <!-- </v-row> -->
-    <h2 class="text-h7 mb-5">ยี่ห้อรถที่ใช้ได้</h2>
-    <!-- </template> -->
-
-    <!-- <template> -->
-    <v-toolbar flat color="deep-purple-accent-4" dark>
-      <v-toolbar-title>Filter results</v-toolbar-title>
-    </v-toolbar>
-    <!-- </template>
-</template>
-  <template> -->
-    <div class="text-center">
-      <v-chip
-        class="ma-2"
-        color="indigo"
-        text-color="white"
-        prepend-icon="mdi-account-circle"
-      >
-        Mike
-      </v-chip>
-
-      <v-chip
-        class="ma-2"
-        color="orange"
-        text-color="white"
-        append-icon="mdi-star"
-      >
-        Premium
-      </v-chip>
-
-      <v-chip
-        class="ma-2"
-        color="primary"
-        text-color="white"
-        append-icon="mdi-cake-variant"
-      >
-        1 Year
-      </v-chip>
-
-      <v-chip class="ma-2" color="green" text-color="white">
-        <template v-slot:prepend>
-          <v-avatar class="green-darken-4"> 1 </v-avatar>
-        </template>
-        Years
-      </v-chip>
-
-      <v-chip
-        class="ma-2"
-        closable
-        color="teal"
-        text-color="white"
-        prepend-icon="mdi-checkbox-marked-circle"
-        :model-value="true"
-      >
-        Confirmed
-      </v-chip>
-
-      <v-chip
-        class="ma-2"
-        closable
-        color="teal"
-        text-color="white"
-        close-icon="mdi-delete"
-        prepend-icon="mdi-checkbox-marked-circle"
-        :model-value="true"
-      >
-        Confirmed
-      </v-chip>
-    </div>
-    <!-- </template>
-</template> -->
-
-    <!-- <template> -->
+    <!-- <div class="text-center">
+      
+    </div> -->
 
     <v-container>
-      <v-btn depressed color="primary"> ตกลง </v-btn>
-      <v-btn depressed color="error"> ยกเลิก </v-btn>
+      <div class="text-center">
+        <v-bottom-sheet v-model="sheet" persistent>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn color="green" dark v-bind="attrs" v-on="on"> ตกลง </v-btn>
+          </template>
+          <v-sheet class="text-center" height="200px">
+            <v-btn
+              class="mt-6"
+              text
+              color="green"
+              @click="sheet = !sheet"
+              to="/buyautoparts"
+            >
+              กลับไปหน้าอะไหล่ยนต์
+            </v-btn>
+            <div class="py-3">บันทึกในรายการอะไหล่ยนต์แล้ว</div>
+          </v-sheet>
+        </v-bottom-sheet>
+        <v-btn depressed color="error" to="/buyautoparts"> ยกเลิก </v-btn>
+      </div>
     </v-container>
   </v-form>
 </template>

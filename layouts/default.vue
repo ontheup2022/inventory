@@ -90,31 +90,27 @@ export default {
           title: "บัญชีของคุณ",
           to: "/profile",
         },
-        {
-          icon: "mdi-menu",
-          title: "เมนู",
-          to: "/admin",
-        },
+
         {
           icon: "mdi-clipboard-file-outline",
           title: "ข้อมูลอะไหล่ยนต์",
-          to: "/autoparts",
+          to: "/buyautoparts",
         },
         {
           icon: "mdi-card-account-details-outline",
           title: "ข้อมูลพนักงาน",
           to: "/dataemployee",
         },
-        {
-          icon: "mdi-arrow-up-circle-outline",
-          title: "เบิกอะไหล่",
-          to: "/buyparts",
-        },
-        {
-          icon: "mdi-wallet-bifold-outline",
-          title: "สั่งซื้ออะไหล่",
-          to: "/buyautoparts",
-        },
+        // {
+        //   icon: "mdi-arrow-up-circle-outline",
+        //   title: "เบิกอะไหล่",
+        //   to: "/buyparts",
+        // },
+        // {
+        //   icon: "mdi-wallet-bifold-outline",
+        //   title: "สั่งซื้ออะไหล่",
+        //   to: "/buyautoparts",
+        // },
         {
           icon: "mdi-content-paste",
           title: "สรุปรายงาน",
