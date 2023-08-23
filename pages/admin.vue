@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-row justify="center" align="baseline">
     <v-col cols="10" md="5" sm="6">
       <v-btn
@@ -91,10 +91,10 @@
       </v-btn>
     </v-col>
   </v-row>
-</template>
+</template> -->
 
-<script>
+<!-- <script>
 export default {
   name: "IndexPage",
 };
-</script>
+</script> -->

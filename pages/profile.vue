@@ -1,11 +1,11 @@
 <template>
-  <v-card class="mx-auto" max-width="1000" tile>
+  <v-card class="mx-auto" max-width="800" tile>
     <v-img
       height="100%"
       src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg"
     ></v-img>
     <v-col>
-      <v-avatar size="100" style="position: absolute; top: 130px">
+      <v-avatar size="100" style="position: absolute; top: 80px">
         <v-img
           src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
         ></v-img>
@@ -100,10 +100,15 @@
   </v-card>
 </template>
 
-<script>
+<!-- <script>
 // export default {
 //   data: () => ({
 //     sheet: false,
 //   }),
 // };
+</script> -->
+<script>
+export default {
+  name: "IndexPage",
+};
 </script>

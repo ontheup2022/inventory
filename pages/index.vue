@@ -93,8 +93,8 @@
   </v-row>
 </template>
 
-<script>
+<!-- <script>
 export default {
   name: "IndexPage",
 };
-</script>
+</script> -->

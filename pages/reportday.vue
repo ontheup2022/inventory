@@ -28,11 +28,11 @@
       <v-btn value="right" to="/reportyear"> สรุปรายปี </v-btn>
     </v-btn-toggle>
     <div>
-      <div class="text-center d-flex pb-4">
+      <!-- <div class="text-center d-flex pb-4">
         <v-btn @click="all"> all </v-btn>
         <div>{{ panel }}</div>
         <v-btn @click="none"> none </v-btn>
-      </div>
+      </div> -->
 
       <v-expansion-panels v-model="panel" multiple>
         <v-expansion-panel v-for="(item, i) in items" :key="i">

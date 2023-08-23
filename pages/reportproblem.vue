@@ -143,9 +143,19 @@
 </template>
 
 
-<!-- <script>
+<script>
 export default {
   data: () => ({
+    tags: [
+      "ข้อมูลคลาดเคลื่อน",
+      "รายชื่อพนักงานไม่ถูกต้อง",
+      "ไม่สามารถเบิกอะไหล่ได้",
+      "ไม่สามารถสั่งซื้อได้",
+      "การแจ้งเตือนผิดปกติ",
+      "ลืมรหัสผ่าน",
+      "ระบบมีบัคไม่ทราบสาเหตุ",
+      "อื่นๆ",
+    ],
     methods: {
       deleteItemConfirm() {
         this.reportproblem.splice(this.editedIndex, 1);
@@ -174,9 +184,9 @@ export default {
     },
   }),
 };
-</script> -->
+</script>
 
-<script>
+<!-- <script>
 export default {
   data: () => ({
     tags: [
@@ -191,4 +201,4 @@ export default {
     ],
   }),
 };
-</script>
+</script> -->
