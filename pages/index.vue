@@ -8,7 +8,7 @@
         large
         x-large
         nuxt
-        to="/autoparts"
+        to="/buyautoparts"
         min-height="80"
         width="200"
       >
