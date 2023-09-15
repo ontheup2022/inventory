@@ -130,7 +130,7 @@ export default {
         {
           icon: "mdi-logout",
           title: "ออกจากระบบ",
-          to: "/admin",
+          to: "/home",
         },
       ],
       miniVariant: false,

@@ -62,7 +62,13 @@
             </v-btn>
           </template>
           <v-sheet class="text-center" height="200px">
-            <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
+            <v-btn
+              class="mt-6"
+              text
+              color="green"
+              @click="sheet = !sheet"
+              to="/employeehomeinbox"
+            >
               กลับไปที่รายชื่อ
             </v-btn>
             <div class="py-3">ส่งข้อความให้พนักงานแล้ว</div>

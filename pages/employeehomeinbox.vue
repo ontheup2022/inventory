@@ -75,6 +75,16 @@
         </v-card-actions>
       </v-card>
     </v-col>
+    <v-btn
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="light"
+      @click="loader = 'loading2'"
+      to="/profile"
+    >
+      กลับไปที่หน้าโปรไฟล์
+    </v-btn>
   </v-row>
 </template>
  

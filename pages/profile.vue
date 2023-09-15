@@ -87,15 +87,15 @@
         รายชื่อพนักงาน
       </v-btn>
 
-      <v-btn color="info" class="mr-4" to="notifications">
-        จัดการการเบิก
-      </v-btn>
+      <v-btn color="info" class="mr-4" to="managebuy"> จัดการการเบิก </v-btn>
 
       <v-btn color="warning" class="mr-4" @click="resetValidation">
         ข้อความรายงานปัญหา
       </v-btn>
 
-      <v-btn color="error" class="mr-4" @click="reset"> ออกจากระบบ </v-btn>
+      <v-btn color="error" class="mr-4" @click="reset" to="home">
+        ออกจากระบบ
+      </v-btn>
     </div>
   </v-card>
 </template>

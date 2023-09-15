@@ -1,5 +1,15 @@
 <template>
   <div>
+    <v-btn
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="light"
+      @click="loader = 'loading2'"
+      to="/historybuyapart"
+    >
+      กลับ
+    </v-btn>
     <v-alert
       border="left"
       colored-border
