@@ -1,5 +1,5 @@
 {
-  "name": "Seniorproject",
+  "name": "inventory",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@firebase/app": "^0.9.19",
+    "@firebase/database": "^1.0.1",
     "core-js": "^3.25.3",
     "firebase": "^9.21.0",
     "html-to-vue": "^1.4.0",
