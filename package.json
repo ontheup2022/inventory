@@ -13,7 +13,7 @@
     "@firebase/app": "^0.9.19",
     "@firebase/database": "^1.0.1",
     "core-js": "^3.25.3",
-    "firebase": "^9.21.0",
+    "firebase": "^9.23.0",
     "html-to-vue": "^1.4.0",
     "nuxt": "^2.15.8",
     "openai": "^3.2.1",

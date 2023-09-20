@@ -1,19 +1,22 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Initialize Cloud Firestore through Firebase
-if (!firebase.apps.length) {
-    const firebaseConfig = {
-        // apiKey: "api-key",
-        // authDomain: "project-id.firebaseapp.com",
-        // databaseURL: "https://project-id.firebaseio.com",
-        // projectId: "project-id",
-        // storageBucket: "project-id.appspot.com",
-        // messagingSenderId: "sender-id",
-        // appId: "app-id",
-    
-    }
-    firebase.initializeApp(firebaseConfig)
-}
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDIVjUdtYUvW7-noM1sXNs63CcGHtPgIyE",
+  authDomain: "inventoryautoparts2023.firebaseapp.com",
+  databaseURL: "https://inventoryautoparts2023-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "inventoryautoparts2023",
+  storageBucket: "inventoryautoparts2023.appspot.com",
+  messagingSenderId: "908806748326",
+  appId: "1:908806748326:web:d8929d5d469ef5ffca5c67",
+  measurementId: "G-7YJ2NK2FP4"
+};
 
-export const db = firebase.firestore()
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
