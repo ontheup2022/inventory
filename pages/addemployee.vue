@@ -24,27 +24,59 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="6" md="3">
-          <v-text-field label="ชื่อ"></v-text-field>
+          <v-text-field
+            label="ชื่อ"
+            v-model="formData.name"
+            required
+          ></v-text-field>
         </v-col>
 
         <v-col cols="12" sm="6" md="3">
-          <v-text-field label="นามสกุล" placeholder=""></v-text-field>
+          <v-text-field
+            label="นามสกุล"
+            placeholder=""
+            v-model="formData.surname"
+            required
+          >
+          </v-text-field>
         </v-col>
 
         <v-col cols="12" sm="6" md="3">
-          <v-text-field label="อายุ" solo></v-text-field>
+          <v-text-field
+            label="อายุ"
+            v-model="formData.age"
+            required
+            solo
+          ></v-text-field>
         </v-col>
 
         <v-col cols="12" sm="6" md="3">
-          <v-text-field label="อีเมล" placeholder=""></v-text-field>
+          <v-text-field
+            label="อีเมล"
+            placeholder=""
+            v-model="formData.email"
+            required
+          >
+          </v-text-field>
         </v-col>
 
         <v-col cols="12" sm="6" md="3">
-          <v-text-field label="เบอร์โทรศัพท์" filled></v-text-field>
+          <v-text-field
+            label="เบอร์โทรศัพท์"
+            filled
+            v-model="formData.phone"
+            required
+          ></v-text-field>
         </v-col>
 
         <v-col cols="18" sm="6" md="9">
-          <v-text-field label="ที่อยู่" placeholder="" outlined></v-text-field>
+          <v-text-field
+            label="ที่อยู่"
+            placeholder=""
+            v-model="formData.address"
+            required
+            outlined
+          ></v-text-field>
         </v-col>
       </v-row>
     </v-container>
@@ -67,16 +99,62 @@
         </v-sheet>
       </v-bottom-sheet>
     </div>
+    <!-- แสดงผลลัพธ์ -->
+    <div v-if="submitted">
+      <h3>ข้อมูลที่คุณกรอก</h3>
+      <p>ชื่อ: {{ formData.name }}</p>
+      <p>นามสกุล: {{ formData.surname }}</p>
+      <p>อายุ: {{ formData.age }}</p>
+      <p>อีเมล: {{ formData.email }}</p>
+      <p>เบอร์โทรศัพท์: {{ formData.phone }}</p>
+      <p>ที่อยู่: {{ formData.address }}</p>
+    </div>
   </v-form>
 </template>
+ 
     
-    
+    <script>
+// สร้าง Vue instance
+export default {
+  data() {
+    return {
+      formData: {
+        name: "",
+        surname: "",
+        age: "",
+        email: "",
+        phone: "",
+        address: "",
+      },
+      submitted: false,
+    };
+  },
+  methods: {
+    submitForm() {
+      // ตรวจสอบข้อมูลที่กรอก
+      if (
+        this.formData.name &&
+        this.formData.surname &&
+        this.formData.age &&
+        this.formData.email &&
+        this.formData.phone &&
+        this.formData.address
+      ) {
+        // ตั้งค่า submitted เป็น true เพื่อแสดงผลลัพธ์
+        this.submitted = true;
+      } else {
+        alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
+      }
+    },
+  },
+};
+</script>
   
-  <script>
+  <!-- <script>
 export default {
   name: "InspirePage",
 };
-</script>
+</script> -->
   
   
   
