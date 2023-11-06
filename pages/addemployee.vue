@@ -126,7 +126,7 @@ export default {
         phone: "",
         address: "",
       },
-      submitted: false,
+      submitted: true,
     };
   },
   methods: {
@@ -144,6 +144,64 @@ export default {
         this.submitted = true;
       } else {
         alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
+      }
+    },
+    methods: {
+      async addData() {
+        try {
+          const docRef = this.$fire.firestore
+            .collection("your_collection_path")
+            .doc("your_document_id");
+          await docRef.set({
+            // ข้อมูลที่คุณต้องการเพิ่ม
+          });
+          console.log("Data added successfully!");
+        } catch (error) {
+          console.error("Error adding data:", error);
+        }
+      },
+    },
+    methods: {
+      async updateData() {
+        try {
+          const docRef = this.$fire.firestore
+            .collection("your_collection_path")
+            .doc("your_document_id");
+          // ทำการอัพเดทข้อมูล
+          await docRef.update({
+            // ข้อมูลที่คุณต้องการอัพเดท
+          });
+          console.log("Data updated successfully!");
+        } catch (error) {
+          console.error("Error updating data:", error);
+        }
+      },
+    },
+    methods: {
+      async deleteData() {
+        try {
+          const docRef = this.$fire.firestore
+            .collection("your_collection_path")
+            .doc("your_document_id");
+          // ทำการลบข้อมูล
+          await docRef.delete();
+          console.log("Data deleted successfully!");
+        } catch (error) {
+          console.error("Error deleting data:", error);
+        }
+      },
+    },
+    async asyncData() {
+      try {
+        const docRef = this.$fire.firestore
+          .collection("your_collection_path")
+          .doc("your_document_id");
+        const snapshot = await docRef.get();
+        const data = snapshot.data();
+        return { data };
+      } catch (error) {
+        console.error("Error reading data:", error);
+        return { data: null };
       }
     },
   },
