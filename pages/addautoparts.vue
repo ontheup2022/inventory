@@ -167,7 +167,7 @@
     
     
   
-<script>
+<!-- <script>
 export default {
   name: "InspirePage",
 };
@@ -175,27 +175,101 @@ export default {
 data: () => ({
   Brand: [1],
 });
-</script>
+</script> -->
 
 <script>
+// สร้าง Vue instance
 export default {
-  data: () => ({
-    date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-      .toISOString()
-      .substr(0, 10),
-    menu: true,
-    modal: true,
-    menu2: true,
-  }),
-};
-</script>
-
-<script>
-export default {
+  data() {
+    return {
+      formData: {
+        name: "",
+        surname: "",
+        age: "",
+        email: "",
+        phone: "",
+        address: "",
+      },
+      submitted: true,
+    };
+  },
   methods: {
-    close() {
-      alert("Chip close clicked");
+    submitForm() {
+      // ตรวจสอบข้อมูลที่กรอก
+      if (
+        this.formData.name &&
+        this.formData.surname &&
+        this.formData.age &&
+        this.formData.email &&
+        this.formData.phone &&
+        this.formData.address
+      ) {
+        // ตั้งค่า submitted เป็น true เพื่อแสดงผลลัพธ์
+        this.submitted = true;
+      } else {
+        alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
+      }
+    },
+    methods: {
+      async addData() {
+        try {
+          const docRef = this.$fire.firestore
+            .collection("your_collection_path")
+            .doc("your_document_id");
+          await docRef.set({
+            // ข้อมูลที่คุณต้องการเพิ่ม
+          });
+          console.log("Data added successfully!");
+        } catch (error) {
+          console.error("Error adding data:", error);
+        }
+      },
+    },
+    methods: {
+      async updateData() {
+        try {
+          const docRef = this.$fire.firestore
+            .collection("your_collection_path")
+            .doc("your_document_id");
+          // ทำการอัพเดทข้อมูล
+          await docRef.update({
+            // ข้อมูลที่คุณต้องการอัพเดท
+          });
+          console.log("Data updated successfully!");
+        } catch (error) {
+          console.error("Error updating data:", error);
+        }
+      },
+    },
+    methods: {
+      async deleteData() {
+        try {
+          const docRef = this.$fire.firestore
+            .collection("your_collection_path")
+            .doc("your_document_id");
+          // ทำการลบข้อมูล
+          await docRef.delete();
+          console.log("Data deleted successfully!");
+        } catch (error) {
+          console.error("Error deleting data:", error);
+        }
+      },
+    },
+    async asyncData() {
+      try {
+        const docRef = this.$fire.firestore
+          .collection("your_collection_path")
+          .doc("your_document_id");
+        const snapshot = await docRef.get();
+        const data = snapshot.data();
+        return { data };
+      } catch (error) {
+        console.error("Error reading data:", error);
+        return { data: null };
+      }
     },
   },
 };
 </script>
+
+>
