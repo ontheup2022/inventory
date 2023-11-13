@@ -22,9 +22,9 @@
   <template>
   <v-form>
     <v-container>
-      <!-- <div id="app">
+      <div id="app">
         <div v-text-field="message in messages"></div>
-      </div> -->
+      </div>
 
       <v-row>
         <v-col cols="12" sm="6" md="3">
@@ -133,6 +133,7 @@
  
 <script>
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import {
   getFirestore,
   onSnapshot,
@@ -146,7 +147,7 @@ import {
 } from "firebase/firestore";
 //import { collection, getDocs } from "firebase/firestore";
 import { onUnmounted, ref, Ref } from "vue";
-import func from "vue-editor-bridge";
+//import func from "vue-editor-bridge";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDIVjUdtYUvW7-noM1sXNs63CcGHtPgIyE",
@@ -195,6 +196,14 @@ export default {
   data: () => {
     return {
       messages: ref([]),
+      message: {
+        age: "",
+        mobilephone: "",
+        nameemploy: "",
+        surnameemploy: "",
+        email: "",
+        address: "",
+      },
     };
   },
   mounted() {
