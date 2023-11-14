@@ -1,25 +1,4 @@
-<!--<template>
-    <v-row>
-      <v-col class="text-center">
-        <img
-          src="/v.png"
-          alt="Vuetify.js"
-          class="mb-5"
-        >
-        <blockquote class="blockquote">
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <em>&mdash;</em>
-            </small>
-          </footer>
-        </blockquote>
-      </v-col>
-    </v-row>
-  </template>>-->
-
-
-  <template>
+<template>
   <v-form>
     <v-container>
       <div id="app">
@@ -32,8 +11,8 @@
             label="ชื่อ"
             placeholder="ใส่ชื่อจริง"
             required
-            v-model="message.nameemploy"
-            type="text"
+            v-model="this.message.nameemploy"
+            type="nameemploy"
           ></v-text-field>
         </v-col>
 
@@ -41,8 +20,8 @@
           <v-text-field
             label="นามสกุล"
             placeholder=""
-            v-model="message.surnameemploy"
-            type="text"
+            v-model="this.message.surnameemploy"
+            type="surnameemploy"
             required
           >
           </v-text-field>
@@ -51,8 +30,8 @@
         <v-col cols="12" sm="6" md="3">
           <v-text-field
             label="อายุ"
-            v-model="message.age"
-            type="text"
+            v-model="this.message.age"
+            type="age"
             required
             solo
           ></v-text-field>
@@ -62,8 +41,8 @@
           <v-text-field
             label="อีเมล"
             placeholder=""
-            v-model="message.email"
-            type="text"
+            v-model="this.message.email"
+            type="email"
             required
           >
           </v-text-field>
@@ -73,8 +52,8 @@
           <v-text-field
             label="เบอร์โทรศัพท์"
             filled
-            v-model="message.mobilephone"
-            type="text"
+            v-model="this.message.mobilephone"
+            type="mobilephone"
             required
           ></v-text-field>
         </v-col>
@@ -83,8 +62,8 @@
           <v-text-field
             label="ที่อยู่"
             placeholder=""
-            v-model="message.address"
-            type="text"
+            v-model="this.message.address"
+            type="address"
             required
             outlined
           ></v-text-field>
@@ -99,7 +78,7 @@
             dark
             v-bind="attrs"
             v-on="on"
-            @click="updateMessage(message)"
+            @click="addNewMessage(message)"
           >
             บันทึก
           </v-btn>
@@ -145,8 +124,8 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
-//import { collection, getDocs } from "firebase/firestore";
-import { onUnmounted, ref, Ref } from "vue";
+//import { addDoc, collection } from "firebase/firestore";
+//import { onUnmounted, ref, Ref } from "vue";
 //import func from "vue-editor-bridge";
 
 const firebaseConfig = {
@@ -166,63 +145,22 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 // สร้าง Vue instance
 export default {
-  name: "addemployee",
-  components: {},
-  methods: {
-    addNewMessage: function () {
-      addDoc(collection(db, "messages"), {
-        age: this.$refs.newmessage.value,
-        mobilephone: this.$refs.newmessage.value,
-        nameemploy: this.$refs.newmessage.value,
-        surnameemploy: this.$refs.newmessage.value,
-        email: this.$refs.newmessage.value,
-        address: this.$refs.newmessage.value,
+  addNewMessage: async function (message) {
+    try {
+      // Access the form data using v-model directly
+      const docRef = await addDoc(collection(db, "messages"), {
+        age: this.message.age,
+        mobilephone: this.message.mobilephone,
+        nameemploy: this.message.nameemploy,
+        surnameemploy: this.message.surnameemploy,
+        email: this.message.email,
+        address: this.message.address,
       });
-    },
-    updateMessage: function (message) {
-      setDoc(doc(db, "messages", message.id), {
-        age: message.age,
-        mobilephone: message.mobilephone,
-        nameemploy: message.nameemploy,
-        surnameemploy: message.surnameemploy,
-        email: message.email,
-        address: message.address,
-      });
-    },
-    deleteMessage: function (message) {
-      deleteDoc(doc(db, "messages", id));
-    },
-  },
-  data: () => {
-    return {
-      messages: ref([]),
-      message: {
-        age: "",
-        mobilephone: "",
-        nameemploy: "",
-        surnameemploy: "",
-        email: "",
-        address: "",
-      },
-    };
-  },
-  mounted() {
-    const latestQuery = query(collection(db, "messeges"), orderBy("date"));
-    const livemessages = onSnapshot(latestQuery, (snapshot) => {
-      this.messages = snapshot.docs.map((doc) => {
-        return {
-          id: doc.id,
-          age: doc.data().age,
-          mobilephone: doc.data().mobilephone,
-          nameemploy: doc.data().nameemploy,
-          surnameemploy: doc.data().surnameemploy,
-          email: doc.data().email,
-          address: doc.data().address,
-          date: doc.data().date,
-        };
-      });
-    });
-    onUnmounted(livemessages);
+
+      console.log("Document written with ID: ", docRef.id);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   },
   // data() {
   //   return {
