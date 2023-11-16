@@ -1,9 +1,9 @@
 <template>
   <v-form>
     <v-container>
-      <div id="app">
+      <!-- <div id="app">
         <div v-text-field="message in messages"></div>
-      </div>
+      </div> -->
 
       <v-row>
         <v-col cols="12" sm="6" md="3">
@@ -11,8 +11,8 @@
             label="ชื่อ"
             placeholder="ใส่ชื่อจริง"
             required
-            v-model="this.message.nameemploy"
-            type="nameemploy"
+            v-model="employee.nameemploy"
+            type="text"
           ></v-text-field>
         </v-col>
 
@@ -20,8 +20,8 @@
           <v-text-field
             label="นามสกุล"
             placeholder=""
-            v-model="this.message.surnameemploy"
-            type="surnameemploy"
+            v-model="employee.surnameemploy"
+            type="text"
             required
           >
           </v-text-field>
@@ -30,8 +30,8 @@
         <v-col cols="12" sm="6" md="3">
           <v-text-field
             label="อายุ"
-            v-model="this.message.age"
-            type="age"
+            v-model="employee.age"
+            type="text"
             required
             solo
           ></v-text-field>
@@ -41,8 +41,8 @@
           <v-text-field
             label="อีเมล"
             placeholder=""
-            v-model="this.message.email"
-            type="email"
+            v-model="employee.email"
+            type="text"
             required
           >
           </v-text-field>
@@ -52,8 +52,8 @@
           <v-text-field
             label="เบอร์โทรศัพท์"
             filled
-            v-model="this.message.mobilephone"
-            type="mobilephone"
+            v-model="employee.mobilephone"
+            type="text"
             required
           ></v-text-field>
         </v-col>
@@ -62,8 +62,8 @@
           <v-text-field
             label="ที่อยู่"
             placeholder=""
-            v-model="this.message.address"
-            type="address"
+            v-model="employee.address"
+            type="text"
             required
             outlined
           ></v-text-field>
@@ -78,7 +78,7 @@
             dark
             v-bind="attrs"
             v-on="on"
-            @click="addNewMessage(message)"
+            @click="addNewMessage()"
           >
             บันทึก
           </v-btn>
@@ -124,8 +124,8 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
-//import { addDoc, collection } from "firebase/firestore";
-//import { onUnmounted, ref, Ref } from "vue";
+//import { collection, getDocs } from "firebase/firestore";
+import { onUnmounted, ref, Ref } from "vue";
 //import func from "vue-editor-bridge";
 
 const firebaseConfig = {
@@ -145,22 +145,70 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 // สร้าง Vue instance
 export default {
-  addNewMessage: async function (message) {
-    try {
-      // Access the form data using v-model directly
-      const docRef = await addDoc(collection(db, "messages"), {
-        age: this.message.age,
-        mobilephone: this.message.mobilephone,
-        nameemploy: this.message.nameemploy,
-        surnameemploy: this.message.surnameemploy,
-        email: this.message.email,
-        address: this.message.address,
-      });
+  name: "addemployee",
+  components: {},
+  methods: {
+    addNewMessage: async function () {
+      try {
+        // Access the form data using v-model directly
+        const docRef = await addDoc(collection(db, "employee"), {
+          age: this.employee.age,
+          mobilephone: this.employee.mobilephone,
+          nameemploy: this.employee.nameemploy,
+          surnameemploy: this.employee.surnameemploy,
+          email: this.employee.email,
+          address: this.employee.address,
+        });
 
-      console.log("Document written with ID: ", docRef.id);
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
+        console.log("Document written with ID: ", docRef.id);
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    },
+    updateMessage: function (employee) {
+      setDoc(doc(db, "employee", employee.id), {
+        age: employee.age,
+        mobilephone: employee.mobilephone,
+        nameemploy: employee.nameemploy,
+        surnameemploy: employee.surnameemploy,
+        email: employee.email,
+        address: employee.address,
+      });
+    },
+    deleteMessage: function (employee) {
+      deleteDoc(doc(db, "employee", id));
+    },
+  },
+  data: () => {
+    return {
+      employee: ref([]),
+      employee: {
+        age: "",
+        mobilephone: "",
+        nameemploy: "",
+        surnameemploy: "",
+        email: "",
+        address: "",
+      },
+    };
+  },
+  mounted() {
+    const latestQuery = query(collection(db, "employee"), orderBy("date"));
+    const livemessages = onSnapshot(latestQuery, (snapshot) => {
+      this.employee = snapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          age: doc.data().age,
+          mobilephone: doc.data().mobilephone,
+          nameemploy: doc.data().nameemploy,
+          surnameemploy: doc.data().surnameemploy,
+          email: doc.data().email,
+          address: doc.data().address,
+          date: doc.data().date,
+        };
+      });
+    });
+    onUnmounted(livemessages);
   },
   // data() {
   //   return {
@@ -253,12 +301,3 @@ export default {
   // },
 };
 </script>
-  
-  <!-- <script>
-export default {
-  name: "InspirePage",
-};
-</script> -->
-  
-  
-  

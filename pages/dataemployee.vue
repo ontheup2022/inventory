@@ -59,9 +59,18 @@ const db = getFirestore(app);
 export default {
   async created() {
     console.log("test");
-    const querySnapshot = await getDocs(collection(db, "autoparts"));
+    const querySnapshot = await getDocs(collection(db, "employee"));
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().company}`);
+      console.log(
+        `${doc.id} => ${
+          (doc.data().address,
+          doc.data().age,
+          doc.data().email,
+          doc.data().nameemploy,
+          doc.data().surnameemploy,
+          doc.data().mobilephone)
+        }`
+      );
     });
   },
   data() {

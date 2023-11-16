@@ -149,8 +149,7 @@ export default {
     console.log("test");
     const querySnapshot = await getDocs(collection(db, "autoparts"));
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().company}`);
-      console.log(`${doc.id} => ${doc.data().amount}`);
+      console.log(`${doc.id} => ${(doc.data().company, doc.data().amount)}`);
     });
   },
   data: () => ({

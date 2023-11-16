@@ -1,96 +1,59 @@
 <template>
   <div>
     <v-alert
-      border="left"
-      colored-border
-      type="success"
-      color="green accent-4"
-      elevation="2"
+      v-for="(notification, index) in thenotification"
+      :key="index"
+      :type="notification.type"
+      :color="notification.color"
+      :border="notification.border"
+      :elevation="notification.elevation"
     >
-      5 นาทีที่แล้ว
+      {{ notification.timestamp }} ที่แล้ว
       <v-alert
-        border="right"
-        colored-border
-        type="success"
-        color="green accent-4"
-        elevation="2"
+        v-if="notification.details"
+        :type="notification.type"
+        :color="notification.color"
+        :border="notification.border"
+        :elevation="notification.elevation"
       >
-        การสั่งซื้ออะไหล่เสร็จสมบูรณ์
-      </v-alert>
-    </v-alert>
-
-    <v-alert
-      border="left"
-      colored-border
-      type="success"
-      color="green accent-4"
-      elevation="2"
-    >
-      10 นาทีที่แล้ว
-      <v-alert
-        border="right"
-        colored-border
-        type="success"
-        color="green accent-4"
-        elevation="2"
-      >
-        การสั่งซื้ออะไหล่เสร็จสมบูรณ์
-      </v-alert>
-    </v-alert>
-
-    <v-alert border="left" colored-border type="error" elevation="2">
-      เมื่อวานนี้
-      <v-alert border="right" colored-border type="error" elevation="2">
-        การเบิกอะไหล่ผิดพลาด
+        {{ notification.details }}
         <v-btn
           class="ma-2"
-          :loading="loading2"
-          :disabled="loading2"
+          :loading="notification.loading"
+          :disabled="notification.loading"
           color="light"
-          @click="loader = 'loading2'"
-          to="/pickupautoparts"
+          @click="handleNotificationAction(notification)"
         >
-          เบิกอีกครั้ง
-        </v-btn>
-      </v-alert>
-    </v-alert>
-    <v-alert border="left" colored-border type="error" elevation="2">
-      เมื่อวานนี้
-      <v-alert border="right" colored-border type="error" elevation="2">
-        หัวเทียนใกล้หมด
-        <v-btn
-          class="ma-2"
-          :loading="loading2"
-          :disabled="loading2"
-          color="light"
-          @click="loader = 'loading2'"
-          to="/buyautoparts"
-        >
-          เพิ่มอะไหล่
+          {{ notification.actionLabel }}
         </v-btn>
       </v-alert>
     </v-alert>
   </div>
 </template>
 
-</template>
-
 <script>
 export default {
   data() {
     return {
-      headers: [
+      thenotification: [
         {
-          text: "No.",
-          align: "numberemploy",
-          sortable: false,
-          value: "numbernoti",
+          type: "success",
+          color: "green accent-4",
+          border: "left",
+          elevation: "2",
+          timestamp: "5 นาทีที่แล้ว",
         },
-        { text: "การแจ้งเตือน", value: "notificationnow" },
-        { text: "เลือก", value: "thechoose" },
+        // เพิ่มการแจ้งเตือนเพิ่มเติมตามต้องการ
       ],
-      thenotification: [],
     };
+  },
+  methods: {
+    handleNotificationAction(notification) {
+      // จัดการกับการกระทำสำหรับการแจ้งเตือนที่ระบุ
+      // คุณสามารถใช้ข้อมูลการแจ้งเตือนเพื่อดำเนินการ
+      // เช่น นำทางไปยังเส้นทางที่ระบุหรือเรียกฟังก์ชัน
+      console.log(`Handling action for notification: ${notification.details}`);
+    },
   },
 };
 </script>

@@ -101,11 +101,11 @@ export default {
           title: "ข้อมูลพนักงาน",
           to: "/dataemployee",
         },
-        {
-          icon: "mdi-arrow-up-circle-outline",
-          title: "เข้าระบบ",
-          to: "/Login",
-        },
+        // {
+        //   icon: "mdi-arrow-up-circle-outline",
+        //   title: "เข้าระบบ",
+        //   to: "/Login",
+        // },
         // {
         //   icon: "mdi-wallet-bifold-outline",
         //   title: "สั่งซื้ออะไหล่",
