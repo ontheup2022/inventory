@@ -31,6 +31,7 @@
       :headers="headers"
       :items="autoparts"
       :items-per-page="5"
+      :key="autoparts"
       class="elevation-1"
     >
       <!-- <template slot="chooseaparts" slot-scope="row">
@@ -138,7 +139,7 @@
 
 
 <script>
-//import firebase from "@/path/to/firebaseConfig";
+import { db } from "../firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { initializeApp } from "firebase/app";
@@ -164,14 +165,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const db2 = getFirestore(app);
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+
 export default {
   //methods: {
   async created() {
     console.log("test");
-    const querySnapshot = await getDocs(collection(db, "autoparts"));
+    const querySnapshot = await getDocs(collection(db2, "autoparts"));
     //this.thebuyautoparts.splice(0, this.thebuyautoparts.length);
     querySnapshot.forEach((doc) => {
       //const data = doc.data();
@@ -213,6 +214,7 @@ export default {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           // แปลงข้อมูลจาก Firestore เป็นรูปแบบที่ตรงกับโค้ด Vue.js ของคุณ
+          //this.autoparts.push(doc.data());
           const autopartsData = {
             company: doc.data().company,
             amount: doc.data().amount,

@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { db } from "../firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { initializeApp } from "firebase/app";
