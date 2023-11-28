@@ -135,7 +135,11 @@ export default {
     console.log("test");
     const querySnapshot = await getDocs(collection(db, "autoparts"));
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().company}`);
+      console.log(
+        `${doc.id} => ${doc.data().company}, ${doc.data().amount}, ${
+          doc.data().brand
+        }, ${doc.data().pricetoeach}, ${doc.data().pricetotal}`
+      );
     });
   },
   data: () => ({
@@ -175,96 +179,96 @@ export default {
     },
   }),
 
-  computed: {
-    formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
-    },
-  },
+  // computed: {
+  //   formTitle() {
+  //     return this.editedIndex === -1 ? "New Item" : "Edit Item";
+  //   },
+  // },
 
-  watch: {
-    dialog(val) {
-      val || this.close();
-    },
-    dialogDelete(val) {
-      val || this.closeDelete();
-    },
-  },
+  // watch: {
+  //   dialog(val) {
+  //     val || this.close();
+  //   },
+  //   dialogDelete(val) {
+  //     val || this.closeDelete();
+  //   },
+  // },
 
-  created() {
-    this.initialize();
-  },
+  // created() {
+  //   this.initialize();
+  // },
 
-  methods: {
-    initialize() {
-      this.thebuyparts = [
-        {
-          name: "1",
-          partscode: "174958",
-          listed: "หัวเทียน",
-          number: "8",
-          priceaparts: 5000,
-          priceapartsell: 40000,
-        },
-        {
-          name: "2",
-          partscode: "289621",
-          listed: "ผ้าเบรก",
-          number: "8",
-          priceaparts: 5000,
-          priceapartsell: 40000,
-        },
-        {
-          name: "3",
-          partscode: "473264",
-          listed: "ท่อไอเสีย",
-          number: "8",
-          priceaparts: 5000,
-          priceapartsell: 40000,
-        },
-      ];
-    },
+  // methods: {
+  //   initialize() {
+  //     this.thebuyparts = [
+  //       {
+  //         name: "1",
+  //         partscode: "174958",
+  //         listed: "หัวเทียน",
+  //         number: "8",
+  //         priceaparts: 5000,
+  //         priceapartsell: 40000,
+  //       },
+  //       {
+  //         name: "2",
+  //         partscode: "289621",
+  //         listed: "ผ้าเบรก",
+  //         number: "8",
+  //         priceaparts: 5000,
+  //         priceapartsell: 40000,
+  //       },
+  //       {
+  //         name: "3",
+  //         partscode: "473264",
+  //         listed: "ท่อไอเสีย",
+  //         number: "8",
+  //         priceaparts: 5000,
+  //         priceapartsell: 40000,
+  //       },
+  //     ];
+  //   },
 
-    editItem(item) {
-      this.editedIndex = this.thebuyparts.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialog = true;
-    },
+  //   editItem(item) {
+  //     this.editedIndex = this.thebuyparts.indexOf(item);
+  //     this.editedItem = Object.assign({}, item);
+  //     this.dialog = true;
+  //   },
 
-    deleteItem(item) {
-      this.editedIndex = this.thebuyparts.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialogDelete = true;
-    },
+  //   deleteItem(item) {
+  //     this.editedIndex = this.thebuyparts.indexOf(item);
+  //     this.editedItem = Object.assign({}, item);
+  //     this.dialogDelete = true;
+  //   },
 
-    deleteItemConfirm() {
-      this.thebuyparts.splice(this.editedIndex, 1);
-      this.closeDelete();
-    },
+  //   deleteItemConfirm() {
+  //     this.thebuyparts.splice(this.editedIndex, 1);
+  //     this.closeDelete();
+  //   },
 
-    close() {
-      this.dialog = false;
-      this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
-    },
+  //   close() {
+  //     this.dialog = false;
+  //     this.$nextTick(() => {
+  //       this.editedItem = Object.assign({}, this.defaultItem);
+  //       this.editedIndex = -1;
+  //     });
+  //   },
 
-    closeDelete() {
-      this.dialogDelete = false;
-      this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
-    },
+  //   closeDelete() {
+  //     this.dialogDelete = false;
+  //     this.$nextTick(() => {
+  //       this.editedItem = Object.assign({}, this.defaultItem);
+  //       this.editedIndex = -1;
+  //     });
+  //   },
 
-    save() {
-      if (this.editedIndex > -1) {
-        Object.assign(this.thebuyparts[this.editedIndex], this.editedItem);
-      } else {
-        this.thebuyparts.push(this.editedItem);
-      }
-      this.close();
-    },
-  },
+  //   save() {
+  //     if (this.editedIndex > -1) {
+  //       Object.assign(this.thebuyparts[this.editedIndex], this.editedItem);
+  //     } else {
+  //       this.thebuyparts.push(this.editedItem);
+  //     }
+  //     this.close();
+  //   },
+  // },
 };
 </script>

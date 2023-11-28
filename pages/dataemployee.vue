@@ -22,7 +22,7 @@
     </v-btn>
     <v-data-table
       :headers="headers"
-      :items="theemployee"
+      :items="employee"
       :items-per-page="4"
       class="elevation-1"
     >
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import firebase from "firebase/app";
+import "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
@@ -62,58 +64,95 @@ export default {
     const querySnapshot = await getDocs(collection(db, "employee"));
     querySnapshot.forEach((doc) => {
       console.log(
-        `${doc.id} => ${
-          (doc.data().address,
-          doc.data().age,
-          doc.data().email,
-          doc.data().nameemploy,
-          doc.data().surnameemploy,
-          doc.data().mobilephone)
+        `${doc.id} => ${doc.data().address}, ${doc.data().age}, ${
+          doc.data().email
+        }, ${doc.data().nameemploy}, ${doc.data().surnameemploy}, ${
+          doc.data().mobilephone
         }`
       );
+      // console.log(
+      //   `${doc.id} => ${
+      //     (doc.data().address,
+      //     doc.data().age,
+      //     doc.data().email,
+      //     doc.data().nameemploy,
+      //     doc.data().surnameemploy,
+      //     doc.data().mobilephone)
+      //   }`
+      // );
     });
   },
   data() {
     return {
       headers: [
-        {
-          text: "No.",
-          align: "numberemploy",
-          sortable: false,
-          value: "name",
-        },
-        { text: "หมายเลขพนักงาน", value: "number" },
-        { text: "ชื่อ-นามสกุล", value: "nameemployee" },
+        // {
+        //   text: "No.",
+        //   align: "numberemploy",
+        //   sortable: false,
+        //   value: "name",
+        // },
+        //{ text: "หมายเลขพนักงาน", value: "number" },
+        { text: "ชื่อ", value: "nameemployee" },
+        { text: "นามสกุล", value: "surnameemployee" },
         { text: "เบอร์โทรศัพท์", value: "telemployee" },
+        { text: "ที่อยู่", value: "theaddress" },
+        { text: "อีเมล", value: "theemail" },
+        { text: "อายุ", value: "theage" },
       ],
-      theemployee: [
-        {
-          name: "1",
-          number: "00031",
-          nameemployee: "ธนาธร จึงรุ่งเรืองกิจ",
-          telemployee: "08046289xx",
-        },
-        {
-          name: "2",
-          number: "00032",
-          nameemployee: "พิธา ลิ้มเจริญรัตน์",
-          telemployee: "08057924xx",
-        },
-        {
-          name: "3",
-          number: "00033",
-          nameemployee: "รังสิมันต์ โรม",
-          telemployee: "08025496xx",
-        },
-
-        {
-          name: "4",
-          number: "00034",
-          nameemployee: "วิโรจน์ ลักขณาอดิศร",
-          telemployee: "080754992xx",
-        },
+      employee: [
+        // {
+        //   name: "1",
+        //   number: "00031",
+        //   nameemployee: "ธนาธร จึงรุ่งเรืองกิจ",
+        //   telemployee: "08046289xx",
+        // },
+        // {
+        //   name: "2",
+        //   number: "00032",
+        //   nameemployee: "พิธา ลิ้มเจริญรัตน์",
+        //   telemployee: "08057924xx",
+        // },
+        // {
+        //   name: "3",
+        //   number: "00033",
+        //   nameemployee: "รังสิมันต์ โรม",
+        //   telemployee: "08025496xx",
+        // },
+        // {
+        //   name: "4",
+        //   number: "00034",
+        //   nameemployee: "วิโรจน์ ลักขณาอดิศร",
+        //   telemployee: "080754992xx",
+        // },
       ],
     };
+  },
+  mounted() {
+    // ก่อนที่คุณจะใช้ mounted hook, ตรวจสอบว่าคุณได้ทำการติดตั้ง Firebase และกำหนดค่า Firestore ไว้แล้ว
+
+    const db = firebase.firestore();
+
+    console.log("employee", db);
+
+    // ดึงข้อมูลจาก Firestore
+    db.collection("employee")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // แปลงข้อมูลจาก Firestore เป็นรูปแบบที่ตรงกับโค้ด Vue.js ของคุณ
+          const employeeData = {
+            nameemployee: doc.data().nameemploy,
+            surnameemployee: doc.data().surnameemploy,
+            telemployee: doc.data().mobilephone,
+            theaddress: doc.data().address,
+            theemail: doc.data().email,
+            theage: doc.data().age,
+          };
+
+          // เพิ่มข้อมูลลงใน theemployee array
+          this.employee.push(employeeData);
+        });
+      });
   },
 };
 </script>

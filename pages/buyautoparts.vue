@@ -29,11 +29,9 @@
     >
     <v-data-table
       :headers="headers"
-      :items="thebuyautoparts"
+      :items="autoparts"
       :items-per-page="5"
-      class="elevation-2"
-      density="compact"
-      item-key="name"
+      class="elevation-1"
     >
       <!-- <template slot="chooseaparts" slot-scope="row">
         <td>{{ row.item.no }}</td>
@@ -56,22 +54,22 @@
                 <v-container>
                   <v-row>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field
+                      <!-- <v-text-field
                         v-model="editedItem.name"
                         label="No."
-                      ></v-text-field>
+                      ></v-text-field> -->
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field
+                      <!-- <v-text-field
                         v-model="editedItem.calories"
                         label="หมายเลขรายการ"
-                      ></v-text-field>
+                      ></v-text-field> -->
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field
+                      <!-- <v-text-field
                         v-model="editedItem.fat"
                         label="จำนวน"
-                      ></v-text-field>
+                      ></v-text-field> -->
                     </v-col>
                   </v-row>
                 </v-container>
@@ -106,22 +104,47 @@
           </v-dialog>
         </v-toolbar>
       </template>
-      <template v-slot:item.chooseaparts="{ item }">
-        <v-btn small class="mr-2" @click="editItem(item)"> แก้ไข </v-btn>
-        <v-btn small class="mr-2" @click="deleteItem(item)"> ลบออก </v-btn>
-        <!-- <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon> -->
-      </template>
+
       <template v-slot:no-data>
         <v-btn color="primary" @click="initialize"> Reset </v-btn>
       </template>
     </v-data-table>
-  </v-col>
+    <!-- <v-data-table
+      :headers="headers"
+      :items="thebuyautoparts"
+      :loading="isLoading"
+      class="elevation-1"
+    >
+      <template v-slot:item="{ item }">
+        <tr :key="item.id">
+          <td>{{ item.company }}</td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.brand }}</td>
+          <td>{{ item.pricetoeach }}</td>
+          <td>{{ item.pricetotal }}</td>
+        </tr>
+      </template> </v-data-table
+    >-->
+
+    <template v-slot:item.chooseaparts="{ item }">
+      <v-btn small class="mr-2" @click="editItem(item)"> แก้ไข </v-btn>
+      <v-btn small class="mr-2" @click="deleteItem(item)"> ลบออก </v-btn>
+      <!-- <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon> -->
+    </template></v-col
+  >
 </template>
+   
+
+
 
 <script>
+//import firebase from "@/path/to/firebaseConfig";
+import firebase from "firebase/app";
+import "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
+//import { getFirestore, collection, getDocs } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -145,144 +168,211 @@ const app = initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 export default {
+  //methods: {
   async created() {
     console.log("test");
     const querySnapshot = await getDocs(collection(db, "autoparts"));
+    //this.thebuyautoparts.splice(0, this.thebuyautoparts.length);
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${(doc.data().company, doc.data().amount)}`);
+      //const data = doc.data();
+      // ดึงข้อมูลจากเอกสาร Firestore และผลักในอาร์เรย์ thebuyautoparts
+      //console.log(this.thebuyautoparts);
+      console.log(
+        `${doc.id} => ${doc.data().company}, ${doc.data().amount}, ${
+          doc.data().brand
+        }, ${doc.data().pricetoeach}, ${doc.data().pricetotal}`
+      );
+      //this.thebuyautoparts.push(data);
     });
+    // try {
+    // } catch (error) {
+    //   console.error("Error getting documents: ", error);
+    // }
   },
-  data: () => ({
-    dialog: false,
-    dialogDelete: false,
-    headers: [
-      {
-        text: "No.",
-        align: "numbers",
-        sortable: false,
-        value: "name",
-      },
-      { text: "วันที่สั่ง", value: "datetoorder" },
-      { text: "ประเภทอะไหล่", value: "type" },
-      { text: "ยี่ห้อ", value: "brand" },
-      { text: "บริษัท", value: "company" },
-      { text: "หน่วย", value: "unit" },
-      { text: "ราคา", value: "price" },
-      { text: "ยอดรวม", value: "priceallaparts" },
-      { text: "เลือก", value: "chooseaparts", sortable: false },
-    ],
-    thebuyautoparts: [],
-    editedIndex: -1,
-    editedItem: {
-      name: 0,
-      datetoorder: "",
-      company: "",
-      priceallaparts: "",
-    },
-    defaultItem: {
-      name: 0,
-      datetoorder: "",
-      company: "",
-      priceallaparts: "",
-    },
-  }),
-
-  computed: {
-    formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
-    },
+  //},
+  data() {
+    return {
+      headers: [
+        { text: "บริษัท", value: "company" },
+        { text: "จำนวน", value: "amount" },
+        { text: "ยี่ห้อ", value: "brand" },
+        { text: "ราคาต่อชิ้น", value: "pricetoeach" },
+        { text: "ราคารวม", value: "pricetotal" },
+      ],
+      autoparts: [],
+    };
   },
+  mounted() {
+    // ก่อนที่คุณจะใช้ mounted hook, ตรวจสอบว่าคุณได้ทำการติดตั้ง Firebase และกำหนดค่า Firestore ไว้แล้ว
 
-  watch: {
-    dialog(val) {
-      val || this.close();
-    },
-    dialogDelete(val) {
-      val || this.closeDelete();
-    },
-  },
+    const db = firebase.firestore();
 
-  created() {
-    this.initialize();
-  },
+    // ดึงข้อมูลจาก Firestore
+    db.collection("autoparts")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // แปลงข้อมูลจาก Firestore เป็นรูปแบบที่ตรงกับโค้ด Vue.js ของคุณ
+          const autopartsData = {
+            company: doc.data().company,
+            amount: doc.data().amount,
+            brand: doc.data().brand,
+            pricetoeach: doc.data().pricetoeach,
+            pricetotal: doc.data().pricetotal,
+          };
 
-  methods: {
-    initialize() {
-      this.thebuyautoparts = [
-        {
-          name: "1",
-          datetoorder: "23022022",
-          type: "หัวเทียน",
-          brand: "Denso",
-          unit: "5",
-          price: "400",
-          company: "Tenma Co.,LTD",
-          priceallaparts: 2000,
-        },
-        {
-          name: "2",
-          datetoorder: "23022022",
-          type: "	ผ้าเบรก",
-          brand: "Aisin Seiki",
-          unit: "8",
-          price: "400",
-          company: "Tenma Co.,LTD",
-          priceallaparts: 3200,
-        },
-        {
-          name: "3",
-          datetoorder: "23022022",
-          type: "	ท่อไอเสีย",
-          brand: "Johnson Controls",
-          unit: "2",
-          price: "1800",
-          company: "Tenma Co.,LTD",
-          priceallaparts: 3600,
-        },
-      ];
-    },
-
-    editItem(item) {
-      this.editedIndex = this.thebuyautoparts.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialog = true;
-    },
-
-    deleteItem(item) {
-      this.editedIndex = this.thebuyautoparts.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialogDelete = true;
-    },
-
-    deleteItemConfirm() {
-      this.thebuyautoparts.splice(this.editedIndex, 1);
-      this.closeDelete();
-    },
-
-    close() {
-      this.dialog = false;
-      this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
+          // เพิ่มข้อมูลลงใน theemployee array
+          this.autoparts.push(autopartsData);
+        });
       });
-    },
-
-    closeDelete() {
-      this.dialogDelete = false;
-      this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
-    },
-
-    save() {
-      if (this.editedIndex > -1) {
-        Object.assign(this.thebuyautoparts[this.editedIndex], this.editedItem);
-      } else {
-        this.thebuyautoparts.push(this.editedItem);
-      }
-      this.close();
-    },
   },
+
+  // async created() {
+  //   console.log("test");
+  //   const querySnapshot = await getDocs(collection(db, "autoparts"));
+  //   querySnapshot.forEach((doc) => {});
+  // },
+  // data: () => ({
+  //   dialog: false,
+  //   dialogDelete: false,
+  //   headers: [
+  //     {
+  //       text: "No.",
+  //       align: "numbers",
+  //       sortable: false,
+  //       value: "id",
+  //     },
+  //     { text: "วันที่สั่ง", value: "datetoorder" },
+  //     { text: "ประเภทอะไหล่", value: "type" },
+  //     { text: "ยี่ห้อ", value: "brand" },
+  //     { text: "บริษัท", value: "company" },
+  //     { text: "หน่วย", value: "unit" },
+  //     { text: "ราคา", value: "price" },
+  //     { text: "ยอดรวม", value: "priceallaparts" },
+  //     { text: "เลือก", value: "chooseaparts", sortable: false },
+  //   ],
+  //   thebuyautoparts: [],
+  //   editedIndex: -1,
+  //   editedItem: {
+  //     id: 0,
+  //     datetoorder: "",
+  //     company: "",
+  //     priceallaparts: "",
+  //   },
+  //   defaultItem: {
+  //     id: 0,
+  //     datetoorder: "",
+  //     company: "",
+  //     priceallaparts: "",
+  //   },
+  // }),
+
+  // computed: {
+  //   formTitle() {
+  //     return this.editedIndex === -1 ? "New Item" : "Edit Item";
+  //   },
+  // },
+
+  // watch: {
+  //   dialog(val) {
+  //     val || this.close();
+  //   },
+  //   dialogDelete(val) {
+  //     val || this.closeDelete();
+  //   },
+  // },
+  // created() {
+  //   this.loadDataFromFirestore();
+  // },
+
+  // methods: {
+  //   async loadDataFromFirestore() {
+  //     const querySnapshot = await getDocs(collection(db, "autoparts"));
+
+  //     querySnapshot.forEach((doc) => {
+  //       // ใส่ข้อมูลจาก Firestore ลงใน thebuyautoparts
+  //       this.thebuyautoparts = [
+  //         {
+  //           datetoorder: "23022022",
+  //           type: "หัวเทียน",
+  //           brand: "Denso",
+  //           unit: "5",
+  //           price: "400",
+  //           company: "Tenma Co.,LTD",
+  //           priceallaparts: 2000,
+  //         },
+  //         {
+  //           datetoorder: "23022022",
+  //           type: "	ผ้าเบรก",
+  //           brand: "Aisin Seiki",
+  //           unit: "8",
+  //           price: "400",
+  //           company: "Tenma Co.,LTD",
+  //           priceallaparts: 3200,
+  //         },
+  //         {
+  //           datetoorder: "23022022",
+  //           type: "	ท่อไอเสีย",
+  //           brand: "Johnson Controls",
+  //           unit: "2",
+  //           price: "1800",
+  //           company: "Tenma Co.,LTD",
+  //           priceallaparts: 3600,
+  //         },
+  //       ];
+  //       this.thebuyautoparts.push(doc.data());
+  //     });
+  //   },
+  // },
+
+  // created() {
+  //   this.initialize();
+  // },
+
+  // methods: {
+  //   initialize() {},
+
+  //   editItem(item) {
+  //     this.editedIndex = this.autoparts.indexOf(item);
+  //     this.editedItem = Object.assign({}, item);
+  //     this.dialog = true;
+  //   },
+
+  //   deleteItem(item) {
+  //     this.editedIndex = this.autoparts.indexOf(item);
+  //     this.editedItem = Object.assign({}, item);
+  //     this.dialogDelete = true;
+  //   },
+
+  //   deleteItemConfirm() {
+  //     this.thebuyautoparts.splice(this.editedIndex, 1);
+  //     this.closeDelete();
+  //   },
+
+  //   close() {
+  //     this.dialog = false;
+  //     this.$nextTick(() => {
+  //       this.editedItem = Object.assign({}, this.defaultItem);
+  //       this.editedIndex = -1;
+  //     });
+  //   },
+
+  //   closeDelete() {
+  //     this.dialogDelete = false;
+  //     this.$nextTick(() => {
+  //       this.editedItem = Object.assign({}, this.defaultItem);
+  //       this.editedIndex = -1;
+  //     });
+  //   },
+
+  //   save() {
+  //     if (this.editedIndex > -1) {
+  //       Object.assign(this.autoparts[this.editedIndex], this.editedItem);
+  //     } else {
+  //       this.autoparts.push(this.editedItem);
+  //     }
+  //     this.close();
+  //   },
+  // },
 };
 </script>
